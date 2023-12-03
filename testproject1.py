@@ -140,18 +140,10 @@ def write_books_to_file(filename):
             file.write(f"{book.get_ISBN()},{book.get_author()},{book.get_title()},{book.get_publisher()},{book.get_genre()},{book.get_year_published()},{book.get_date_purchased()},{book.get_status()}\n")
 
 def validate_ISBN(ISBN):
-    try:
-        int(ISBN)
-        return True
-    except ValueError:
-        return False
+        return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0)
 
 def validate_year(year):
-    try:
-        int(year)
-        return True
-    except ValueError:
-        return False
+        return year == "" or (year.isdigit() and len(year) == 4)
 
 
 # Read books from the file when the program starts
@@ -180,8 +172,8 @@ while choice >= 1 and choice <= 6:
         publisher = input("Enter publisher: ")
         genre = input("Enter genre: ")
         year_published = input("Enter year published: ")
-        while not validate_year(year_published):
-            print("Invalid input. Year must be an integer.")
+        while not (validate_year(year_published) and len(year_published) == 4):
+            print("Invalid input. Year must be a 4-digit integer.")
             year_published = input("Enter year published: ")
         date_purchased = input("Enter date purchased: ")
         status = input("Enter status: ")
@@ -207,8 +199,8 @@ while choice >= 1 and choice <= 6:
         publisher = input("Enter publisher: ")
         genre = input("Enter genre: ")
         year_published = input("Enter year published: ")
-        while not Book.validate_year(year_published):
-            print("Invalid input. Year must be an integer.")
+        while not (validate_year(year_published) and len(year_published) == 4):
+            print("Invalid input. Year must be a 4-digit integer.")
             year_published = input("Enter year published: ")
         date_purchased = input("Enter date purchased: ")
         status = input("Enter status: ")
@@ -244,4 +236,3 @@ while choice >= 1 and choice <= 6:
         # Write books back to the file when the program exits
         write_books_to_file("books_StudentID.txt")
         break
-
