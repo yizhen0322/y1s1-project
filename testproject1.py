@@ -233,7 +233,7 @@ while 1 <= choice <= 6:
             print(bk)
 
     elif choice == 5:
-        ISBN = input("Enter ISBN: ")
+        ISBN = input("Enter ISBN (leave blank if not searching by author):")
         while not validate_ISBN(ISBN):
             print("Invalid input. ISBN must be an integer.")
             ISBN = input("Enter ISBN: ")
