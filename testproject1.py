@@ -152,21 +152,21 @@ read_books_from_file("books_StudentID.txt")
 choice = 1
 book = Book(0, "", "", "", "", 0, "", "")
 
-while choice >= 1 and choice <= 6:
+while 1 <= choice <= 6:
     print("\n\n1. Add new book\n2. Remove book by ISBN, author, or title\n3. Update book by ISBN, author, or title\n4. Get all books list\n5. Search for book(s) by ISBN, author, or title\n6. Exit\n")
 
     try:
         choice = int(input("Enter your choice: "))
     except ValueError:
         print("Invalid input. Please enter a valid integer.")
-        continue  # This will go back to the beginning of the loop
+        continue
 
     if choice == 1:
         ISBN = input("Enter ISBN: ")
         while not validate_ISBN(ISBN):
             print("Invalid input. ISBN must be an integer.")
             ISBN = input("Enter ISBN: ")
-    # Handle the error or ask the user to input again
+
         author = input("Enter author: ")
         title = input("Enter title: ")
         publisher = input("Enter publisher: ")
@@ -175,14 +175,16 @@ while choice >= 1 and choice <= 6:
         while not (validate_year(year_published) and len(year_published) == 4):
             print("Invalid input. Year must be a 4-digit integer.")
             year_published = input("Enter year published: ")
+
         date_purchased = input("Enter date purchased: ")
         status = input("Enter status: ")
         new_book = Book(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
         new_book.add_new_book()
-        print(f"\nAdd successful. Book name: {new_book}")
+
+        print(f"\nAdd {'successful' if new_book in Book.bookList else 'failed'}. Book name: {new_book}")
 
     elif choice == 2:
-        identifier = (input("Enter ISBN, author, or title: "))
+        identifier = input("Enter ISBN, author, or title: ")
         bk = book.remove_book_by_id(identifier)
         if bk == False:
             print(f"\nSorry, delete failed. Book not found: {identifier}")
@@ -194,6 +196,7 @@ while choice >= 1 and choice <= 6:
         while not validate_ISBN(ISBN):
             print("Invalid input. ISBN must be an integer.")
             ISBN = input("Enter ISBN: ")
+
         author = input("Enter author: ")
         title = input("Enter title: ")
         publisher = input("Enter publisher: ")
@@ -202,11 +205,12 @@ while choice >= 1 and choice <= 6:
         while not (validate_year(year_published) and len(year_published) == 4):
             print("Invalid input. Year must be a 4-digit integer.")
             year_published = input("Enter year published: ")
+
         date_purchased = input("Enter date purchased: ")
         status = input("Enter status: ")
-        bk = book.update_book_by_id(identifier, author, title, publisher, genre, year_published, date_purchased, status)
+        bk = book.update_book_by_id(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
         if bk == False:
-            print(f"\nSorry, update failed. Book not found: {identifier}")
+            print(f"\nSorry, update failed. Book not found: {ISBN}")
         else:
             print("Update successful.")
 
