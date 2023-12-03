@@ -119,7 +119,7 @@ class Book:
         return self.status
 
     def __str__(self):
-        return f"{self.ISBN} {self.author} {self.title} {self.publisher} {self.genre} {self.year_published} {self.date_purchased} {self.status}"
+        return f"{self.ISBN},{self.author},{self.title},{self.publisher},{self.genre},{self.year_published},{self.date_purchased},{self.status}"
 
 
 def read_books_from_file(filename):
@@ -232,6 +232,7 @@ while 1 <= choice <= 6:
         print("\n")
         for bk in book.display_book_list():
             print(bk)
+
 
     elif choice == 5:
         search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
