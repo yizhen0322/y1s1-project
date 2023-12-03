@@ -1,0 +1,30 @@
+9780062951366,Colson Whitehead,Harlem Shuffle,Doubleday,Historical fiction,2021,03-12-2023,read
+9780316499875,Stephen King,Billy Summers,Scribner,Thriller,2021,04-12-2023,to-read
+9780593139134,Barack Obama,A Promised Land,Crown,Memoir,2020,01-12-2023,to-read
+9781250268822,Andy Weir,Project Hail Mary,Ballantine Books,Science fiction,2021,02-12-2023,read
+9781524763169,Tara Westover,Educated,Random House,Biography,2018,05-12-2023,read
+9780525566670,Matthew McConaughey,Greenlights,Crown,Self-help,2020,06-12-2023,to-read
+9780062878101,Isabel Wilkerson,Caste,Random House,Social science,2020,07-12-2023,to-read
+9780593135143,Delia Owens,Where the Crawdads Sing,G.P. Putnam’s Sons,Fiction,2018,08-12-2023,read
+9781984877499,Ernest Cline,Ready Player Two,Ballantine Books,Science fiction,2020,09-12-2023,to-read
+9781524763138,Michelle Obama,Becoming,Crown,Memoir,2018,10-12-2023,read
+9780062316097,Neil Gaiman,Norse Mythology,W. W. Norton & Company,Mythology,2017,11-12-2023,to-read
+9780062678423,George R. R. Martin,Fire & Blood,Bantam Books,Fantasy,2018,12-12-2023,read
+9780062498533,Angie Thomas,The Hate U Give,Balzer + Bray,Young adult,2017,13-12-2023,read
+9780062878026,Adam Grant,Think Again,Viking,Psychology,2021,14-12-2023,read
+9780062941503,Brit Bennett,The Vanishing Half,Riverhead Books,Fiction,2020,15-12-2023,to-read
+9780062667632,Mark Manson,The Subtle Art of Not Giving a F*ck,Harper,Self-help,2016,16-12-2023,read
+9780062874875,James Clear,Atomic Habits,Avery,Self-help,2018,17-12-2023,read
+9780062315007,Paulo Coelho,The Alchemist,HarperOne,Fiction,1993,18-12-2023,read
+9780062838099,Yuval Noah Harari,Sapiens,Harper Perennial,History,2015,19-12-2023,to-read
+9780062838631,Yuval Noah Harari,Homo Deus,Harper Perennial,History,2017,20-12-2023,read
+9780062838693,Yuval Noah Harari,21 Lessons for the 21st Century,Spiegel & Grau,History,2018,21-12-2023,read
+9780062457738,Charles Duhigg,The Power of Habit,Random House,Psychology,2014,22-12-2023,read
+9780062457714,Charles Duhigg,Smarter Faster Better,Random House,Psychology,2016,23-12-2023,to-read
+9780062457691,Charles Duhigg,How To: Absurd Scientific Advice for Common Real-World Problems,W. W. Norton & Company,Humor,2019,24-12-2023,to-read
+9780062316103,Harper Lee,To Kill a Mockingbird,Harper Perennial,Classic,2006,25-12-2023,to-read
+9780062316110,Harper Lee,Go Set a Watchman,Harper,Classic,2015,26-12-2023,read
+9780062316127,Harper Lee,The Mockingbird Next Door,Penguin Books,Biography,2015,27-12-2023,to-read
+9780062316134,Harper Lee,Mockingbird: A Portrait of Harper Lee,Harper Perennial,Biography,2007,28-12-2023,read
+9780062316141,Harper Lee,To Kill a Mockingbird: A Graphic Novel,Harper,Graphic novel,2018,29-12-2023,read
+9780062316158,Harper Lee,To Kill a Mockingbird: The Screenplay,Harper Perennial,Screenplay,2002,30-12-2023,read
