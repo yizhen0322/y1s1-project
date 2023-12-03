@@ -181,7 +181,7 @@ while 1 <= choice <= 6:
         new_book = Book(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
         new_book.add_new_book()
 
-        print(f"\nAdd {'successful' if new_book in Book.bookList else 'failed'}. Book name: {new_book}")
+        print(f"\nAdd {'successful' if new_book in Book.bookList else 'failed'}. Book: {new_book}")
 
     elif choice == 2:
         identifier = input("Enter ISBN, author, or title: ")
@@ -192,26 +192,39 @@ while 1 <= choice <= 6:
             print(f"Delete successful. Identifier: {identifier}")
 
     elif choice == 3:
-        ISBN = input("Enter ISBN: ")
-        while not validate_ISBN(ISBN):
-            print("Invalid input. ISBN must be an integer.")
-            ISBN = input("Enter ISBN: ")
-
-        author = input("Enter author: ")
-        title = input("Enter title: ")
-        publisher = input("Enter publisher: ")
-        genre = input("Enter genre: ")
-        year_published = input("Enter year published: ")
-        while not (validate_year(year_published) and len(year_published) == 4):
-            print("Invalid input. Year must be a 4-digit integer.")
-            year_published = input("Enter year published: ")
-
-        date_purchased = input("Enter date purchased: ")
-        status = input("Enter status: ")
-        bk = book.update_book_by_id(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
-        if bk == False:
-            print(f"\nSorry, update failed. Book not found: {ISBN}")
+        identifier = input("Enter ISBN, author, or title: ")
+        bk = book.get_book_by_id(identifier)
+        if not bk:
+            print(f"\nSorry, update failed. Book not found: {identifier}")
         else:
+            print("Book details:")
+            print(bk)
+            
+            # Prompt for updated information
+            author = input("Enter new author (leave blank to keep current): ")
+            title = input("Enter new title (leave blank to keep current): ")
+            publisher = input("Enter new publisher (leave blank to keep current): ")
+            genre = input("Enter new genre (leave blank to keep current): ")
+            year_published = input("Enter new year published (leave blank to keep current): ")
+            date_purchased = input("Enter new date purchased (leave blank to keep current): ")
+            status = input("Enter new status (leave blank to keep current): ")
+            
+            # Update only the fields that are not left blank
+            if author:
+                bk.set_author(author)
+            if title:
+                bk.set_title(title)
+            if publisher:
+                bk.set_publisher(publisher)
+            if genre:
+                bk.set_genre(genre)
+            if year_published:
+                bk.set_year_published(year_published)
+            if date_purchased:
+                bk.set_date_purchased(date_purchased)
+            if status:
+                bk.set_status(status)
+                
             print("Update successful.")
 
     elif choice == 4:
