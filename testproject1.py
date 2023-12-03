@@ -18,7 +18,7 @@ class Book:
     def add_new_book(self):
         Book.bookList.append(self)
 
-    def get_book_list(self):
+    def display_book_list(self):
         return Book.bookList
 
     def get_book_by_id(self, identifier):
@@ -153,7 +153,7 @@ choice = 1
 book = Book(0, "", "", "", "", 0, "", "")
 
 while 1 <= choice <= 6:
-    print("\n\n1. Add new book\n2. Remove book by ISBN, author, or title\n3. Update book by ISBN, author, or title\n4. Get all books list\n5. Search for book(s) by ISBN, author, or title\n6. Exit\n")
+    print("\n\n1. Add new book\n2. Remove book by ISBN, author, or title\n3. Update book by ISBN, author, or title\n4. Display all the books that are currently in the system\n5. Search for book(s) by ISBN, author, or title\n6. Exit\n")
 
     try:
         choice = int(input("Enter your choice: "))
@@ -229,7 +229,7 @@ while 1 <= choice <= 6:
 
     elif choice == 4:
         print("\n")
-        for bk in book.get_book_list():
+        for bk in book.display_book_list():
             print(bk)
 
     elif choice == 5:
