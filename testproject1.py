@@ -58,15 +58,16 @@ class Book:
                 return True
         return False
 
-    def search_books(self, isbn="", author="", title=""):
-        results = []
-        for book in Book.bookList:
-            if (
-                (not isbn or book.get_ISBN() == isbn)
-                and (not author or book.get_author().lower() == author.lower())
-                and (not title or book.get_title().lower() == title.lower())
-            ):
-                results.append(book)
+    def search_books_by_ISBN(self, isbn):
+        results = [book for book in Book.bookList if str(book.get_ISBN()) == str(isbn)]
+        return results
+
+    def search_books_by_author(self, author):
+        results = [book for book in Book.bookList if book.get_author().lower() == author.lower()]
+        return results
+
+    def search_books_by_title(self, title):
+        results = [book for book in Book.bookList if book.get_title().lower() == title.lower()]
         return results
 
     def set_ISBN(self, ISBN):
@@ -233,14 +234,23 @@ while 1 <= choice <= 6:
             print(bk)
 
     elif choice == 5:
-        ISBN = input("Enter ISBN (leave blank if not searching by author):")
-        while not validate_ISBN(ISBN):
-            print("Invalid input. ISBN must be an integer.")
+        search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
+        if search_choice == 1:
             ISBN = input("Enter ISBN: ")
-
-        author = input("Enter author (leave blank if not searching by author): ")
-        title = input("Enter title (leave blank if not searching by title): ")
-        search_results = book.search_books(ISBN, author, title)
+            while not validate_ISBN(ISBN):
+                print("Invalid input. ISBN must be an integer.")
+                ISBN = input("Enter ISBN: ")
+            search_results = book.search_books_by_ISBN(ISBN)
+        elif search_choice == 2:
+            author = input("Enter author: ")
+            search_results = book.search_books_by_author(author)
+        elif search_choice == 3:
+            title = input("Enter title: ")
+            search_results = book.search_books_by_title(title)
+        else:
+            print("Invalid choice. Please enter a valid option.")
+            continue
+        
         if not search_results:
             print("\nNo matching books found.")
         else:
