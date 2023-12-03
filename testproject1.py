@@ -118,7 +118,7 @@ class Book:
         return self.status
 
     def __str__(self):
-        return f"{self.ISBN} {self.title} {self.author} {self.publisher} {self.genre} {self.year_published} {self.date_purchased} {self.status}"
+        return f"{self.ISBN} {self.author} {self.title} {self.publisher} {self.genre} {self.year_published} {self.date_purchased} {self.status}"
 
 
 def read_books_from_file(filename):
