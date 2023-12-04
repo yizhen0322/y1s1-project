@@ -115,7 +115,7 @@ def write_books_to_file(filename):
             file.write(f"{book.get_ISBN()},{book.get_author()},{book.get_title()},{book.get_publisher()},{book.get_genre()},{book.get_year_published()},{book.get_date_purchased()},{book.get_status()}\n")
 
 def validate_ISBN(ISBN):
-        return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0 and len(ISBN) == 13 )
+        return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0)
 
 def validate_year(year):
         return year == "" or (year.isdigit() and len(year) == 4)
@@ -136,10 +136,10 @@ while 1 <= choice <= 6:
         print("Invalid input. Please enter a valid integer.")
         continue
 
-    if choice == 1:
+    if choice == 1:     #add book
         ISBN = input("Enter ISBN: ")
         while not validate_ISBN(ISBN):
-            print("Invalid input. ISBN must consist of 13 positive integer number.")
+            print("Invalid input. ISBN must be an integer.")
             ISBN = input("Enter ISBN: ")
 
         author = input("Enter author: ")
@@ -158,12 +158,12 @@ while 1 <= choice <= 6:
 
         print(f"\nAdd {'successful' if new_book in Book.bookList else 'failed'}. Book: {new_book}")
 
-    elif choice == 2:
+    elif choice == 2:       #remove book
         search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
         if search_choice == 1:
             ISBN = input("Enter ISBN: ")
             while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must consist of 13 positive integer number.")
+                print("Invalid input. ISBN must be an integer.")
                 ISBN = input("Enter ISBN: ")
             search_results = book.search_books_by_ISBN(ISBN)
         elif search_choice == 2:
@@ -183,7 +183,7 @@ while 1 <= choice <= 6:
             for result in search_results:
                 print(result)
          # Prompt for confirmation to delete
-            delete_confirmation = input("Do you want to delete the matched book(s)? (yes/no): ").lower()
+            delete_confirmation = input("Do you want to delete the matched book(s)? (yes/others): ").lower()
             if delete_confirmation == "yes":
                 for result in search_results:
                     Book.bookList.remove(result)
@@ -191,12 +191,12 @@ while 1 <= choice <= 6:
             else :
                 print("Delete canceled.")        
 
-    elif choice == 3 :
+    elif choice == 3:      #update (i set ibsn cant be change ,what u guys think?)
         search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
         if search_choice == 1:
             ISBN = input("Enter ISBN: ")
             while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must consist of 13 positive integer number.")
+                print("Invalid input. ISBN must be an integer.")
                 ISBN = input("Enter ISBN: ")
             search_results = book.search_books_by_ISBN(ISBN)
         elif search_choice == 2:
@@ -218,10 +218,14 @@ while 1 <= choice <= 6:
     
             # Prompt for updated information
             author = input("Enter new author (leave blank to keep current): ")
-            title = input("Enter new title (leave 4 to keep current): ")
+            title = input("Enter new title (leave blank to keep current): ")
             publisher = input("Enter new publisher (leave blank to keep current): ")
             genre = input("Enter new genre (leave blank to keep current): ")
             year_published = input("Enter new year published (leave blank to keep current): ")
+            while not (validate_year(year_published) ):
+                print("Invalid input. Year must be a 4-digit integer.")
+                year_published = input("Enter year published: ")
+
             date_purchased = input("Enter new date purchased (leave blank to keep current): ")
             status = input("Enter new status (leave blank to keep current): ")
             
@@ -244,18 +248,18 @@ while 1 <= choice <= 6:
             print("Update successful.")
 
 
-    elif choice == 4:
+    elif choice == 4:       #display all book in system
         print("\n")
         for bk in book.display_book_list():
             print(bk)
 
 
-    elif choice == 5:
+    elif choice == 5:       #search book(s)
         search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
         if search_choice == 1:
             ISBN = input("Enter ISBN: ")
             while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must consist of 13 positive integer number.")
+                print("Invalid input. ISBN must be an integer.")
                 ISBN = input("Enter ISBN: ")
             search_results = book.search_books_by_ISBN(ISBN)
         elif search_choice == 2:
@@ -275,7 +279,7 @@ while 1 <= choice <= 6:
             for result in search_results:
                 print(result)
 
-    elif choice == 6:
+    elif choice == 6:       #exit and write to file
         print("Exiting the program.")
         # Write books back to the file when the program exits
         write_books_to_file("books_StudentID.txt")
