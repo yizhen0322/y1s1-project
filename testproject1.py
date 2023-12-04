@@ -151,7 +151,7 @@ while True:
         publisher = input("Enter publisher(leave blank if can't find): ")
         genre = input("Enter genre(leave blank if can't find): ")
         year_published = input("Enter year published(leave blank if can't find): ")
-        while not (validate_year(year_published) and len(year_published) == 4):
+        while not validate_year(year_published) :
             print("Invalid input. Year must be a 4-digit integer.")
             year_published = input("Enter year published(leave blank if can't find): ")
 
@@ -163,22 +163,30 @@ while True:
         print(f"\nAdd {'successful' if new_book in Book.bookList else 'failed'}. Book: {new_book}")
 
     elif choice == 2:
-        search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
-        if search_choice == 1:
-            ISBN = input("Enter ISBN: ")
-            while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must consist of 13 positive integer number.")
+        search_results = []
+        try:
+            search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
+        
+            if search_choice == 1:
                 ISBN = input("Enter ISBN: ")
-            search_results = book.search_books_by_ISBN(ISBN)
-        elif search_choice == 2:
-            author = input("Enter author: ")
-            search_results = book.search_books_by_author(author)
-        elif search_choice == 3:
-            title = input("Enter title: ")
-            search_results = book.search_books_by_title(title)
-        else:
-            print("Invalid choice. Please enter a valid option.")
-            continue
+                while not validate_ISBN(ISBN):
+                    print("Invalid input. ISBN must consist of 13 positive integer number.(blank for cancel)")
+                    ISBN = input("Enter ISBN: ")
+                search_results = book.search_books_by_ISBN(ISBN)
+            elif search_choice == 2:
+                author = input("Enter author: ")
+                search_results = book.search_books_by_author(author)
+            elif search_choice == 3:
+                title = input("Enter title: ")
+                search_results = book.search_books_by_title(title)
+            else:
+                print("Invalid choice. Please enter a valid option.")
+                continue  # This will go back to the beginning of the loop
+
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+        # You may choose to handle this differently, like asking the user to input the choice again.
+
 
         if not search_results:
             print("\nNo matching books found.")
@@ -187,31 +195,46 @@ while True:
             for result in search_results:
                 print(result)
          # Prompt for confirmation to delete
-            delete_confirmation = input("Do you want to delete the matched book(s)? (yes/no): ").lower()
+        
+            while True:
+                delete_confirmation = input("Do you want to delete the matched book(s)? (yes/no): ").lower()
+                if delete_confirmation in ["yes", "no"]:
+                    break
+                else:
+                    print("Invalid input. Please enter 'yes' or 'no'.")
+
             if delete_confirmation == "yes":
                 for result in search_results:
                     Book.bookList.remove(result)
                 print("Delete successful.")
-            else :
-                print("Delete canceled.")        
+            else:
+                print("Delete canceled.")
+                  
 
-    elif choice == 3:      #update
-        search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
-        if search_choice == 1:
-            ISBN = input("Enter ISBN: ")
-            while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must consist of 13 positive integer number.")
+    elif choice == 3:
+        search_results = []      #update
+        try:
+            search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
+        
+            if search_choice == 1:
                 ISBN = input("Enter ISBN: ")
-            search_results = book.search_books_by_ISBN(ISBN)
-        elif search_choice == 2:
-            author = input("Enter author: ")
-            search_results = book.search_books_by_author(author)
-        elif search_choice == 3:
-            title = input("Enter title: ")
-            search_results = book.search_books_by_title(title)
-        else:
-            print("Invalid choice. Please enter a valid option.")
-            continue
+                while not validate_ISBN(ISBN):
+                    print("Invalid input. ISBN must consist of 13 positive integer number.(blank for cancel)")
+                    ISBN = input("Enter ISBN: ")
+                search_results = book.search_books_by_ISBN(ISBN)
+            elif search_choice == 2:
+                author = input("Enter author: ")
+                search_results = book.search_books_by_author(author)
+            elif search_choice == 3:
+                title = input("Enter title: ")
+                search_results = book.search_books_by_title(title)
+            else:
+                print("Invalid choice. Please enter a valid option.")
+                continue  # This will go back to the beginning of the loop
+
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+        # You may choose to handle this differently, like asking the user to input the choice again.
 
         if not search_results:
             print("\nNo matching books found.")
@@ -300,22 +323,29 @@ while True:
 
 
     elif choice == 5:
-        search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
-        if search_choice == 1:
-            ISBN = input("Enter ISBN: ")
-            while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must consist of 13 positive integer number.")
+        search_results = []
+        try:
+            search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
+        
+            if search_choice == 1:
                 ISBN = input("Enter ISBN: ")
-            search_results = book.search_books_by_ISBN(ISBN)
-        elif search_choice == 2:
-            author = input("Enter author: ")
-            search_results = book.search_books_by_author(author)
-        elif search_choice == 3:
-            title = input("Enter title: ")
-            search_results = book.search_books_by_title(title)
-        else:
-            print("Invalid choice. Please enter a valid option.")
-            continue
+                while not validate_ISBN(ISBN):
+                    print("Invalid input. ISBN must consist of 13 positive integer number.(blank for cancel)")
+                    ISBN = input("Enter ISBN: ")
+                search_results = book.search_books_by_ISBN(ISBN)
+            elif search_choice == 2:
+                author = input("Enter author: ")
+                search_results = book.search_books_by_author(author)
+            elif search_choice == 3:
+                title = input("Enter title: ")
+                search_results = book.search_books_by_title(title)
+            else:
+                print("Invalid choice. Please enter a valid option.")
+                continue  # This will go back to the beginning of the loop
+
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+        # You may choose to handle this differently, like asking the user to input the choice again.
         
         if not search_results:
             print("\nNo matching books found.")
