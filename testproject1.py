@@ -259,17 +259,17 @@ while True:
             # Prompt for updated information based on search criteria
             if search_choice == 1:
                 # If searching by ISBN, don't allow changes to ISBN
-                author = input("Enter new author: ")
-                title = input("Enter new title: ")
-                publisher = input("Enter new publisher: ")
-                genre = input("Enter new genre: ")
-                year_published = input("Enter new year published: ")
+                author = input("Enter new author (leave blank to keep current): ")
+                title = input("Enter new title (leave blank to keep current): ")
+                publisher = input("Enter new publisher (leave blank to keep current): ")
+                genre = input("Enter new genre (leave blank to keep current): ")
+                year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
                     print("Invalid input. Year must be a 4-digit integer.")
                     year_published = input("Enter year published: ")
 
-                date_purchased = input("Enter new date purchased: ")
-                status = input("Enter new status: ")
+                date_purchased = input("Enter new date purchased (leave blank to keep current): ")
+                status = input("Enter new status (leave blank to keep current): ")
             elif search_choice == 2:
                 # If searching by author, don't allow changes to author
                 ISBN = input("Enter ISBN: ")
@@ -277,16 +277,16 @@ while True:
                     print("Invalid input. ISBN must consist of 13 positive integer number.")
                     ISBN = input("Enter ISBN: ")
 
-                title = input("Enter new title: ")
-                publisher = input("Enter new publisher: ")
-                genre = input("Enter new genre: ")
-                year_published = input("Enter new year published: ")
+                title = input("Enter new title (leave blank to keep current): ")
+                publisher = input("Enter new publisher (leave blank to keep current): ")
+                genre = input("Enter new genre (leave blank to keep current): ")
+                year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
                     print("Invalid input. ISBN must consist of 13 positive integer number.")
                     year_published = input("Enter year published: ")
 
-                date_purchased = input("Enter new date purchased: ")
-                status = input("Enter new status: ")
+                date_purchased = input("Enter new date purchased (leave blank to keep current): ")
+                status = input("Enter new status (leave blank to keep current): ")
             elif search_choice == 3:
                 # If searching by title, don't allow changes to title
                 ISBN = input("Enter ISBN: ")
@@ -294,16 +294,16 @@ while True:
                     print("Invalid input. ISBN must be an integer.")
                     ISBN = input("Enter ISBN: ")
                     
-                author = input("Enter new author: ")
-                publisher = input("Enter new publisher: ")
-                genre = input("Enter new genre: ")
-                year_published = input("Enter new year published: ")
+                author = input("Enter new author (leave blank to keep current): ")
+                publisher = input("Enter new publisher (leave blank to keep current): ")
+                genre = input("Enter new genre (leave blank to keep current): ")
+                year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
                     print("Invalid input. Year must be a 4-digit integer.")
                     year_published = input("Enter year published: ")
 
-                date_purchased = input("Enter new date purchased: ")
-                status = input("Enter new status: ")
+                date_purchased = input("Enter new date purchased (leave blank to keep current): ")
+                status = input("Enter new status (leave blank to keep current): ")
 
             # Update only the fields that are not left blank
             for result in search_results:
