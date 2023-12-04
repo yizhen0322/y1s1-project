@@ -1,9 +1,10 @@
 from typing import List
 
 class Book:
-    bookList = []
+    bookList = []  # Class variable to store a list of all books
 
     def __init__(self, ISBN, author, title, publisher, genre, year_published, date_purchased, status):
+        # Constructor to initialize a new Book object with provided attributes
         self.ISBN, self.author, self.title, self.publisher, self.genre, self.year_published, self.date_purchased, self.status = (
             ISBN,
             author,
@@ -16,75 +17,85 @@ class Book:
         )
 
     def add_new_book(self):
+        # Method to add a new book to the bookList
         Book.bookList.append(self)
 
     def display_book_list(self):
+        # Method to return the list of all books
         return Book.bookList
 
     def search_books_by_ISBN(self, isbn):
+        # Method to search books by ISBN and return a list of matching books
         results = [book for book in Book.bookList if str(book.get_ISBN()) == str(isbn)]
         return results
-
-    def search_books_by_author(self, author):
-        results = [book for book in Book.bookList if book.get_author().lower() == author.lower()]
-        return results
-
-    def search_books_by_title(self, title):
-        results = [book for book in Book.bookList if book.get_title().lower() == title.lower()]
-        return results
-
+    
+    # Getter and setter methods for ISBN
     def set_ISBN(self, ISBN):
         self.ISBN = ISBN
 
     def get_ISBN(self):
         return self.ISBN
 
+    # Getter and setter methods for author
     def set_author(self, author):
         self.author = author
 
     def get_author(self):
         return self.author
 
+    # Getter and setter methods for title
     def set_title(self, title):
         self.title = title
 
     def get_title(self):
         return self.title
 
+    # Getter and setter methods for publisher
     def set_publisher(self, publisher):
         self.publisher = publisher
 
     def get_publisher(self):
         return self.publisher
 
+    # Getter and setter methods for genre
     def set_genre(self, genre):
         self.genre = genre
 
     def get_genre(self):
         return self.genre
 
+    # Getter and setter methods for year_published
     def set_year_published(self, year_published):
         self.year_published = year_published
 
     def get_year_published(self):
         return self.year_published
 
+    # Getter and setter methods for date_purchased
     def set_date_purchased(self, date_purchased):
         self.date_purchased = date_purchased
 
     def get_date_purchased(self):
         return self.date_purchased
 
+    # Getter and setter methods for status
     def set_status(self, status):
         self.status = status
 
     def get_status(self):
         return self.status
 
+    # Method to provide a string representation of the book
     def __str__(self):
         return f"{self.ISBN},{self.author},{self.title},{self.publisher},{self.genre},{self.year_published},{self.date_purchased},{self.status}"
 
+    # Getter and setter methods for various book attributes
 
+    def __str__(self):
+        # Method to return a string representation of the book
+        return f"{self.ISBN},{self.author},{self.title},{self.publisher},{self.genre},{self.year_published},{self.date_purchased},{self.status}"
+
+# Function to read books from a file and populate the bookList
 def read_books_from_file(filename):
     try:
         with open(filename, 'r') as file:
@@ -98,11 +109,13 @@ def read_books_from_file(filename):
     except FileNotFoundError:
         print(f"The file {filename} does not exist. Starting with an empty book list.")
 
+# Function to write books to a file
 def write_books_to_file(filename):
     with open(filename, 'w') as file:
         for book in Book.bookList:
             file.write(f"{book.get_ISBN()},{book.get_author()},{book.get_title()},{book.get_publisher()},{book.get_genre()},{book.get_year_published()},{book.get_date_purchased()},{book.get_status()}\n")
 
+# Functions to validate ISBN and year inputs
 def validate_ISBN(ISBN):
         return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0 and len(ISBN) == 13 )
 
@@ -110,6 +123,7 @@ def validate_year(year):
         return year == "" or (year.isdigit() and len(year) == 4)
 
 
+# Main part of the program
 # Read books from the file when the program starts
 read_books_from_file("books_StudentID.txt")
 
@@ -127,7 +141,6 @@ while True:
     except ValueError:
         print("Invalid input. Please enter a valid integer.")
         continue
-
 
     if choice == 1:             #here need to add if no info just blank
         ISBN = input("Enter ISBN(must input): ")
@@ -299,11 +312,11 @@ while True:
                     result.set_status(status)
 
             # Display the updated book information
-            print("\nUpdated Book Information:")
-            for result in search_results:
-                print(result)
+                print("\nUpdated Book Information:")
+                for result in search_results:
+                    print(result)
 
-            print("Update successful.")
+                print("Update successful.")
 
     elif choice == 4:
         print("\n")
