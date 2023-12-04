@@ -127,12 +127,16 @@ def validate_year(year):
 # Read books from the file when the program starts
 read_books_from_file("books_StudentID.txt")
 
+# Initialize choice and a default book
 choice = 1
 book = Book(0, "", "", "", "", 0, "", "")
 
+# Main program loop
 while True:
+    # Display menu options
     print("\n\n1. Add new book\n2. Remove book by ISBN, author, or title\n3. Update book by ISBN, author, or title\n4. Display all the books that are currently in the system\n5. Search for book(s) by ISBN, author, or title\n6. Exit\n")
 
+    # Get user choice and handle input validation
     try:
         choice = int(input("Enter your choice: "))
         if not 1 <= choice <= 6:
@@ -142,29 +146,35 @@ while True:
         print("Invalid input. Please enter a valid integer.")
         continue
 
-    if choice == 1:             #here need to add if no info just blank
+    # Process user choice
+    if choice == 1:
+        # Option 1: Add new book
         ISBN = input("Enter ISBN(must input): ")
-        while not (validate_ISBN(ISBN) and len(ISBN) == 13) :
-            print("Invalid input. ISBN must consist of 13 positive integer number.")
+        while not (validate_ISBN(ISBN) and len(ISBN) == 13):
+            print("Invalid input. ISBN must consist of 13 positive integer numbers.")
             ISBN = input("Enter ISBN: ")
 
+        # Get other book details from user
         author = input("Enter author(leave blank if can't find): ")
         title = input("Enter title(leave blank if can't find): ")
         publisher = input("Enter publisher(leave blank if can't find): ")
         genre = input("Enter genre(leave blank if can't find): ")
         year_published = input("Enter year published(leave blank if can't find): ")
-        while not validate_year(year_published) :
+        while not validate_year(year_published):
             print("Invalid input. Year must be a 4-digit integer.")
             year_published = input("Enter year published(leave blank if can't find): ")
 
         date_purchased = input("Enter date purchased(leave blank if can't find): ")
         status = input("Enter status(leave blank if can't find): ")
+
+        # Create a new book object and add it to the book list
         new_book = Book(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
         new_book.add_new_book()
 
         print(f"\nAdd {'successful' if new_book in Book.bookList else 'failed'}. Book: {new_book}")
 
     elif choice == 2:
+        # Option 2: Remove book
         search_results = []
         try:
             search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
@@ -214,7 +224,8 @@ while True:
                   
 
     elif choice == 3:
-        search_results = []      #update
+        # Option 3: Update book
+        search_results = []      
         try:
             search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
         
@@ -312,19 +323,20 @@ while True:
                     result.set_status(status)
 
             # Display the updated book information
-                print("\nUpdated Book Information:")
-                for result in search_results:
-                    print(result)
+            print("\nUpdated Book Information:")
+            for result in search_results:
+                print(result)
 
-                print("Update successful.")
+            print("Update successful.")
 
     elif choice == 4:
+        # Option 4: Display all books
         print("\n")
         for bk in book.display_book_list():
             print(bk)
 
-
     elif choice == 5:
+        # Option 5: Search for books
         search_results = []
         try:
             search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
@@ -357,7 +369,8 @@ while True:
                 print(result)
 
     elif choice == 6:
+        # Option 6: Exit the program
         print("Exiting the program.")
         # Write books back to the file when the program exits
         write_books_to_file("books_StudentID.txt")
-        break
+        break  # Exit the loop and end the program
