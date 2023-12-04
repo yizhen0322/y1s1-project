@@ -29,6 +29,16 @@ class Book:
         results = [book for book in Book.bookList if str(book.get_ISBN()) == str(isbn)]
         return results
     
+    def search_books_by_author(self, author):
+        # Method to search books by author and return a list of matching books
+        results = [book for book in Book.bookList if book.get_author().lower() == author.lower()]
+        return results
+
+    def search_books_by_title(self, title):
+        # Method to search books by title and return a list of matching books
+        results = [book for book in Book.bookList if book.get_title().lower() == title.lower()]
+        return results
+    
     # Getter and setter methods for ISBN
     def set_ISBN(self, ISBN):
         self.ISBN = ISBN
@@ -91,9 +101,6 @@ class Book:
 
     # Getter and setter methods for various book attributes
 
-    def __str__(self):
-        # Method to return a string representation of the book
-        return f"{self.ISBN},{self.author},{self.title},{self.publisher},{self.genre},{self.year_published},{self.date_purchased},{self.status}"
 
 # Function to read books from a file and populate the bookList
 def read_books_from_file(filename):
