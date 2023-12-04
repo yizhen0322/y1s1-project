@@ -115,7 +115,7 @@ def write_books_to_file(filename):
             file.write(f"{book.get_ISBN()},{book.get_author()},{book.get_title()},{book.get_publisher()},{book.get_genre()},{book.get_year_published()},{book.get_date_purchased()},{book.get_status()}\n")
 
 def validate_ISBN(ISBN):
-        return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0)
+        return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0 and len(ISBN) == 13 )
 
 def validate_year(year):
         return year == "" or (year.isdigit() and len(year) == 4)
@@ -127,43 +127,47 @@ read_books_from_file("books_StudentID.txt")
 choice = 1
 book = Book(0, "", "", "", "", 0, "", "")
 
-while 1 <= choice <= 6:
+while True:
     print("\n\n1. Add new book\n2. Remove book by ISBN, author, or title\n3. Update book by ISBN, author, or title\n4. Display all the books that are currently in the system\n5. Search for book(s) by ISBN, author, or title\n6. Exit\n")
 
     try:
         choice = int(input("Enter your choice: "))
+        if not 1 <= choice <= 6:
+            print("Invalid input. Please enter a number between 1 and 6.")
+            continue
     except ValueError:
         print("Invalid input. Please enter a valid integer.")
         continue
 
-    if choice == 1:     #add book
-        ISBN = input("Enter ISBN: ")
-        while not validate_ISBN(ISBN):
-            print("Invalid input. ISBN must be an integer.")
+
+    if choice == 1:             #here need to add if no info just blank
+        ISBN = input("Enter ISBN(must input): ")
+        while not (validate_ISBN(ISBN) and len(ISBN) == 13) :
+            print("Invalid input. ISBN must consist of 13 positive integer number.")
             ISBN = input("Enter ISBN: ")
 
-        author = input("Enter author: ")
-        title = input("Enter title: ")
-        publisher = input("Enter publisher: ")
-        genre = input("Enter genre: ")
-        year_published = input("Enter year published: ")
+        author = input("Enter author(leave blank if can't find): ")
+        title = input("Enter title(leave blank if can't find): ")
+        publisher = input("Enter publisher(leave blank if can't find): ")
+        genre = input("Enter genre(leave blank if can't find): ")
+        year_published = input("Enter year published(leave blank if can't find): ")
         while not (validate_year(year_published) and len(year_published) == 4):
             print("Invalid input. Year must be a 4-digit integer.")
-            year_published = input("Enter year published: ")
+            year_published = input("Enter year published(leave blank if can't find): ")
 
-        date_purchased = input("Enter date purchased: ")
-        status = input("Enter status: ")
+        date_purchased = input("Enter date purchased(leave blank if can't find): ")
+        status = input("Enter status(leave blank if can't find): ")
         new_book = Book(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
         new_book.add_new_book()
 
         print(f"\nAdd {'successful' if new_book in Book.bookList else 'failed'}. Book: {new_book}")
 
-    elif choice == 2:       #remove book
+    elif choice == 2:
         search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
         if search_choice == 1:
             ISBN = input("Enter ISBN: ")
             while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must be an integer.")
+                print("Invalid input. ISBN must consist of 13 positive integer number.")
                 ISBN = input("Enter ISBN: ")
             search_results = book.search_books_by_ISBN(ISBN)
         elif search_choice == 2:
@@ -183,7 +187,7 @@ while 1 <= choice <= 6:
             for result in search_results:
                 print(result)
          # Prompt for confirmation to delete
-            delete_confirmation = input("Do you want to delete the matched book(s)? (yes/others): ").lower()
+            delete_confirmation = input("Do you want to delete the matched book(s)? (yes/no): ").lower()
             if delete_confirmation == "yes":
                 for result in search_results:
                     Book.bookList.remove(result)
@@ -191,12 +195,12 @@ while 1 <= choice <= 6:
             else :
                 print("Delete canceled.")        
 
-    elif choice == 3:      #update (i set ibsn cant be change ,what u guys think?)
+    elif choice == 3:      #update
         search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
         if search_choice == 1:
             ISBN = input("Enter ISBN: ")
             while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must be an integer.")
+                print("Invalid input. ISBN must consist of 13 positive integer number.")
                 ISBN = input("Enter ISBN: ")
             search_results = book.search_books_by_ISBN(ISBN)
         elif search_choice == 2:
@@ -208,58 +212,99 @@ while 1 <= choice <= 6:
         else:
             print("Invalid choice. Please enter a valid option.")
             continue
-        
+
         if not search_results:
             print("\nNo matching books found.")
         else:
             print("\nMatching Books:")
             for result in search_results:
                 print(result)
-    
-            # Prompt for updated information
-            author = input("Enter new author (leave blank to keep current): ")
-            title = input("Enter new title (leave blank to keep current): ")
-            publisher = input("Enter new publisher (leave blank to keep current): ")
-            genre = input("Enter new genre (leave blank to keep current): ")
-            year_published = input("Enter new year published (leave blank to keep current): ")
-            while not (validate_year(year_published) ):
-                print("Invalid input. Year must be a 4-digit integer.")
-                year_published = input("Enter year published: ")
 
-            date_purchased = input("Enter new date purchased (leave blank to keep current): ")
-            status = input("Enter new status (leave blank to keep current): ")
-            
+            # Prompt for updated information based on search criteria
+            if search_choice == 1:
+                # If searching by ISBN, don't allow changes to ISBN
+                author = input("Enter new author: ")
+                title = input("Enter new title: ")
+                publisher = input("Enter new publisher: ")
+                genre = input("Enter new genre: ")
+                year_published = input("Enter new year published: ")
+                while not (validate_year(year_published)):
+                    print("Invalid input. Year must be a 4-digit integer.")
+                    year_published = input("Enter year published: ")
+
+                date_purchased = input("Enter new date purchased: ")
+                status = input("Enter new status: ")
+            elif search_choice == 2:
+                # If searching by author, don't allow changes to author
+                ISBN = input("Enter ISBN: ")
+                while not validate_ISBN(ISBN):
+                    print("Invalid input. ISBN must consist of 13 positive integer number.")
+                    ISBN = input("Enter ISBN: ")
+
+                title = input("Enter new title: ")
+                publisher = input("Enter new publisher: ")
+                genre = input("Enter new genre: ")
+                year_published = input("Enter new year published: ")
+                while not (validate_year(year_published)):
+                    print("Invalid input. ISBN must consist of 13 positive integer number.")
+                    year_published = input("Enter year published: ")
+
+                date_purchased = input("Enter new date purchased: ")
+                status = input("Enter new status: ")
+            elif search_choice == 3:
+                # If searching by title, don't allow changes to title
+                ISBN = input("Enter ISBN: ")
+                while not validate_ISBN(ISBN):
+                    print("Invalid input. ISBN must be an integer.")
+                    ISBN = input("Enter ISBN: ")
+                    
+                author = input("Enter new author: ")
+                publisher = input("Enter new publisher: ")
+                genre = input("Enter new genre: ")
+                year_published = input("Enter new year published: ")
+                while not (validate_year(year_published)):
+                    print("Invalid input. Year must be a 4-digit integer.")
+                    year_published = input("Enter year published: ")
+
+                date_purchased = input("Enter new date purchased: ")
+                status = input("Enter new status: ")
+
             # Update only the fields that are not left blank
-            if author:
-                result.set_author(author)
-            if title:
-                result.set_title(title)
-            if publisher:
-                result.set_publisher(publisher)
-            if genre:
-                result.set_genre(genre)
-            if year_published:
-                result.set_year_published(year_published)
-            if date_purchased:
-                result.set_date_purchased(date_purchased)
-            if status:
-                result.set_status(status)
-                
+            for result in search_results:
+                if author:
+                    result.set_author(author)
+                if title:
+                    result.set_title(title)
+                if publisher:
+                    result.set_publisher(publisher)
+                if genre:
+                    result.set_genre(genre)
+                if year_published:
+                    result.set_year_published(year_published)
+                if date_purchased:
+                    result.set_date_purchased(date_purchased)
+                if status:
+                    result.set_status(status)
+
+            # Display the updated book information
+            print("\nUpdated Book Information:")
+            for result in search_results:
+                print(result)
+
             print("Update successful.")
 
-
-    elif choice == 4:       #display all book in system
+    elif choice == 4:
         print("\n")
         for bk in book.display_book_list():
             print(bk)
 
 
-    elif choice == 5:       #search book(s)
+    elif choice == 5:
         search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
         if search_choice == 1:
             ISBN = input("Enter ISBN: ")
             while not validate_ISBN(ISBN):
-                print("Invalid input. ISBN must be an integer.")
+                print("Invalid input. ISBN must consist of 13 positive integer number.")
                 ISBN = input("Enter ISBN: ")
             search_results = book.search_books_by_ISBN(ISBN)
         elif search_choice == 2:
@@ -279,7 +324,7 @@ while 1 <= choice <= 6:
             for result in search_results:
                 print(result)
 
-    elif choice == 6:       #exit and write to file
+    elif choice == 6:
         print("Exiting the program.")
         # Write books back to the file when the program exits
         write_books_to_file("books_StudentID.txt")
