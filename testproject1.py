@@ -21,17 +21,6 @@ class Book:
     def display_book_list(self):
         return Book.bookList
 
-    def remove_book_by_id(self, identifier):        
-        for book in Book.bookList:
-            if (
-                book.get_ISBN() == identifier
-                or book.get_author().lower() == identifier.lower()
-                or book.get_title().lower() == identifier.lower()
-            ):
-                Book.bookList.remove(book)
-                return True
-        return False
-
     def search_books_by_ISBN(self, isbn):
         results = [book for book in Book.bookList if str(book.get_ISBN()) == str(isbn)]
         return results
@@ -170,7 +159,7 @@ while True:
             if search_choice == 1:
                 ISBN = input("Enter ISBN: ")
                 while not validate_ISBN(ISBN):
-                    print("Invalid input. ISBN must consist of 13 positive integer number.(blank for cancel)")
+                    print("Invalid input. ISBN must consist of 13 positive integer number.(leave blank for cancel)")
                     ISBN = input("Enter ISBN: ")
                 search_results = book.search_books_by_ISBN(ISBN)
             elif search_choice == 2:
@@ -219,7 +208,7 @@ while True:
             if search_choice == 1:
                 ISBN = input("Enter ISBN: ")
                 while not validate_ISBN(ISBN):
-                    print("Invalid input. ISBN must consist of 13 positive integer number.(blank for cancel)")
+                    print("Invalid input. ISBN must consist of 13 positive integer number.(leave blank for cancel)")
                     ISBN = input("Enter ISBN: ")
                 search_results = book.search_books_by_ISBN(ISBN)
             elif search_choice == 2:
@@ -330,7 +319,7 @@ while True:
             if search_choice == 1:
                 ISBN = input("Enter ISBN: ")
                 while not validate_ISBN(ISBN):
-                    print("Invalid input. ISBN must consist of 13 positive integer number.(blank for cancel)")
+                    print("Invalid input. ISBN must consist of 13 positive integer number.(leave blank for cancel)")
                     ISBN = input("Enter ISBN: ")
                 search_results = book.search_books_by_ISBN(ISBN)
             elif search_choice == 2:
