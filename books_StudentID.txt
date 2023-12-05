@@ -1,30 +1,30 @@
-9780062951366,Colson Whitehead,Harlem Shuffle,Doubleday,Historical fiction,2021,03-12-2023,read
-9780316499875,Stephen King,Billy Summers,Scribner,Thriller,2021,04-12-2023,to-read
-9780593139134,Barack Obama,A Promised Land,Crown,Memoir,2020,01-12-2023,to-read
-9781250268822,Andy Weir,Project Hail Mary,Ballantine Books,Science fiction,2021,02-12-2023,read
-9781524763169,Tara Westover,Educated,Random House,Biography,2018,05-12-2023,read
-9780525566670,Matthew McConaughey,Greenlights,Crown,Self-help,2020,06-12-2023,to-read
-9780062878101,Isabel Wilkerson,Caste,Random House,Social science,2020,07-12-2023,to-read
-9780593135143,Delia Owens,Where the Crawdads Sing,G.P. Putnam’s Sons,Fiction,2018,08-12-2023,read
-9781984877499,Ernest Cline,Ready Player Two,Ballantine Books,Science fiction,2020,09-12-2023,to-read
-9781524763138,Michelle Obama,Becoming,Crown,Memoir,2018,10-12-2023,read
-9780062316097,Neil Gaiman,Norse Mythology,W. W. Norton & Company,Mythology,2017,11-12-2023,to-read
-9780062678423,George R. R. Martin,Fire & Blood,Bantam Books,Fantasy,2018,12-12-2023,read
-9780062498533,Angie Thomas,The Hate U Give,Balzer + Bray,Young adult,2017,13-12-2023,read
-9780062878026,Adam Grant,Think Again,Viking,Psychology,2021,14-12-2023,read
-9780062941503,Brit Bennett,The Vanishing Half,Riverhead Books,Fiction,2020,15-12-2023,to-read
-9780062667632,Mark Manson,The Subtle Art of Not Giving a F*ck,Harper,Self-help,2016,16-12-2023,read
-9780062874875,James Clear,Atomic Habits,Avery,Self-help,2018,17-12-2023,read
-9780062315007,Paulo Coelho,The Alchemist,HarperOne,Fiction,1993,18-12-2023,read
-9780062838099,Yuval Noah Harari,Sapiens,Harper Perennial,History,2015,19-12-2023,to-read
-9780062838631,Yuval Noah Harari,Homo Deus,Harper Perennial,History,2017,20-12-2023,read
-9780062838693,Yuval Noah Harari,21 Lessons for the 21st Century,Spiegel & Grau,History,2018,21-12-2023,read
-9780062457738,Charles Duhigg,The Power of Habit,Random House,Psychology,2014,22-12-2023,read
-9780062457714,Charles Duhigg,Smarter Faster Better,Random House,Psychology,2016,23-12-2023,to-read
-9780062457691,Charles Duhigg,How To: Absurd Scientific Advice for Common Real-World Problems,W. W. Norton & Company,Humor,2019,24-12-2023,to-read
-9780062316103,Harper Lee,To Kill a Mockingbird,Harper Perennial,Classic,2006,25-12-2023,to-read
-9780062316110,Harper Lee,Go Set a Watchman,Harper,Classic,2015,26-12-2023,read
-9780062316127,Harper Lee,The Mockingbird Next Door,Penguin Books,Biography,2015,27-12-2023,to-read
-9780062316134,Harper Lee,Mockingbird: A Portrait of Harper Lee,Harper Perennial,Biography,2007,28-12-2023,read
-9780062316141,Harper Lee,To Kill a Mockingbird: A Graphic Novel,Harper,Graphic novel,2018,29-12-2023,read
-9780062316158,Harper Lee,To Kill a Mockingbird: The Screenplay,Harper Perennial,Screenplay,2002,30-12-2023,read
+9781785785719,Yasha Levine,Surveillance Valley,Icon Books,Politics,2019,02-01-2020,read
+9780241976630,John Maeda,How to Speak Machine,Portfolio UK,Artificial Intelligence,2019,02-01-2020,to-read
+9781119055808,Andre De Vries,R For Dummies,John Wiley,Programming,2015,12-08-2016,read
+9781785785720,Jane Doe,Book 4,Publisher 4,Genre 4,2020,03-01-2020,read
+9781785785731,John Smith,Book 5,Publisher 5,Genre 5,2021,04-01-2020,to-read
+9781785785742,Mary Johnson,Book 6,Publisher 6,Genre 6,2022,05-01-2020,read
+9781785785753,James Brown,Book 7,Publisher 7,Genre 7,2023,06-01-2020,to-read
+9781785785764,Patricia Davis,Book 8,Publisher 8,Genre 8,2024,07-01-2020,read
+9781785785775,Robert Miller,Book 9,Publisher 9,Genre 9,2025,08-01-2020,to-read
+9781785785786,Linda Wilson,Book 10,Publisher 10,Genre 10,2026,09-01-2020,read
+9781785785797,Michael Moore,Book 11,Publisher 11,Genre 11,2027,10-01-2020,to-read
+9781785785808,Elizabeth Taylor,Book 12,Publisher 12,Genre 12,2028,11-01-2020,read
+9781785785819,William Anderson,Book 13,Publisher 13,Genre 13,2029,12-01-2020,to-read
+9781785785820,Jennifer Thomas,Book 14,Publisher 14,Genre 14,2030,13-01-2020,read
+9781785785831,David Jackson,Book 15,Publisher 15,Genre 15,2031,14-01-2020,to-read
+9781785785842,Sarah White,Book 16,Publisher 16,Genre 16,2032,15-01-2020,read
+9781785785853,Richard Harris,Book 17,Publisher 17,Genre 17,2033,16-01-2020,to-read
+9781785785864,Jessica Martin,Book 18,Publisher 18,Genre 18,2034,17-01-2020,read
+9781785785875,Joseph Thompson,Book 19,Publisher 19,Genre 19,2035,18-01-2020,to-read
+9781785785886,Margaret Garcia,Book 20,Publisher 20,Genre 20,2036,19-01-2020,read
+9781785785897,Charles Martinez,Book 21,Publisher 21,Genre 21,2037,20-01-2020,to-read
+9781785785908,Susan Robinson,Book 22,Publisher 22,Genre 22,2038,21-01-2020,read
+9781785785919,Ronald Clark,Book 23,Publisher 23,Genre 23,2039,22-01-2020,to-read
+9781785785920,Dorothy Rodriguez,Book 24,Publisher 24,Genre 24,2040,23-01-2020,read
+9781785785931,Thomas Lewis,Book 25,Publisher 25,Genre 25,2041,24-01-2020,to-read
+9781785785942,Nancy Walker,Book 26,Publisher 26,Genre 26,2042,25-01-2020,read
+9781785785953,Paul Allen,Book 27,Publisher 27,Genre 27,2043,26-01-2020,to-read
+9781785785964,Betty Perez,Book 28,Publisher 28,Genre 28,2044,27-01-2020,read
+9781785785975,Thomas Allen,Book 29,Publisher 29,Genre 29,2045,28-01-2020,to-read
+9781785785986,Betty Perez,Book 30,Publisher 30,Genre 30,2046,29-01-2020,read
