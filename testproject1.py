@@ -156,15 +156,13 @@ while True:
     # Process user choice
     if choice == 1:
         # Option 1: Add new book
-        ISBN = input("Enter ISBN(leave blank to cancel): ")
+        ISBN = input("Enter ISBN(leave blank to cancel): ")    
+        while not (validate_ISBN(ISBN) and len(ISBN) == 13 or ISBN ==""):
+            print("Invalid input. ISBN must consist of 13 positive integer numbers.")
+            ISBN = input("Enter ISBN(leave blank to cancel): ")
         if ISBN == "":
             print("Add canceled. Returning to the main menu.")
-              # Skip the rest of the loop and go back to the main menu
-        elif not (validate_ISBN(ISBN) and len(ISBN) == 13):
-            print("Invalid input. ISBN must consist of 13 positive integer numbers.(leave blank to cancel)")
-            ISBN = input("Enter ISBN: ")   
-            
-
+            continue  # Skip the rest of the loop and go back to the main menu    
         # Get other book details from user
         author = input("Enter author(leave blank if can't find): ")
         title = input("Enter title(leave blank if can't find): ")
