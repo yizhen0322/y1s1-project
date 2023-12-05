@@ -1,5 +1,3 @@
-from typing import List
-
 class Book:
     bookList = []  # Class variable to store a list of all books
 
