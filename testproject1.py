@@ -1,3 +1,5 @@
+import datetime
+
 class Book:
     bookList = []  # Class variable to store a list of all books
 
@@ -120,12 +122,23 @@ def write_books_to_file(filename):
         for book in Book.bookList:
             file.write(f"{book.get_ISBN()},{book.get_author()},{book.get_title()},{book.get_publisher()},{book.get_genre()},{book.get_year_published()},{book.get_date_purchased()},{book.get_status()}\n")
 
-# Functions to validate ISBN and year inputs
+# Functions to validate ISBN , year and purchased date inputs
 def validate_ISBN(ISBN):
         return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0 and len(ISBN) == 13 )
 
 def validate_year(year):
         return year == "" or (year.isdigit() and len(year) == 4)
+
+def validate_purchased_date(date_purchased):
+    try:
+        if date_purchased == "":
+            return True  # Allow blank input
+        # Try to parse the input as a date
+        datetime.datetime.strptime(date_purchased, "%Y-%m-%d")
+        return True
+    except ValueError:
+        print("Invalid input. Please enter a valid date in the format YYYY-MM-DD.")
+        return False
 
 
 # Main part of the program
@@ -170,8 +183,10 @@ while True:
         while not validate_year(year_published):
             print("Invalid input. Year must be a 4-digit integer.")
             year_published = input("Enter year published(leave blank if can't find): ")
-
-        date_purchased = input("Enter date purchased(leave blank if can't find): ")
+        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+        while not validate_purchased_date(date_purchased):
+            print("Invalid input. Date must be YYYY-MM-DD.")
+            date_purchased = input("Enter date purchased (leave blank if can't find): ")
         status = input("Enter status(leave blank if can't find): ")
 
         # Create a new book object and add it to the book list
@@ -275,7 +290,9 @@ while True:
                     print("Invalid input. Year must be a 4-digit integer.")
                     year_published = input("Enter year published: ")
 
-                date_purchased = input("Enter new date purchased (leave blank to keep current): ")
+                date_purchased = input("Enter date purchased (leave blank if can't find): ")
+                while not validate_purchased_date(date_purchased):
+                    date_purchased = input("Enter date purchased (leave blank if can't find): ")
                 status = input("Enter new status (leave blank to keep current): ")
             elif search_choice == 2:
                 # If searching by author, don't allow changes to author
@@ -291,9 +308,10 @@ while True:
                 while not (validate_year(year_published)):
                     print("Invalid input. ISBN must consist of 13 positive integer number.")
                     year_published = input("Enter year published: ")
-
-                date_purchased = input("Enter new date purchased (leave blank to keep current): ")
-                status = input("Enter new status (leave blank to keep current): ")
+                date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                while not validate_purchased_date(date_purchased):
+                    print("Invalid input. Date must be YYYY-MM-DD.")
+                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
             elif search_choice == 3:
                 # If searching by title, don't allow changes to title
                 ISBN = input("Enter ISBN: ")
@@ -309,7 +327,10 @@ while True:
                     print("Invalid input. Year must be a 4-digit integer.")
                     year_published = input("Enter year published: ")
 
-                date_purchased = input("Enter new date purchased (leave blank to keep current): ")
+                date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                while not validate_purchased_date(date_purchased):
+                    print("Invalid input. Date must be YYYY-MM-DD.")
+                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 status = input("Enter new status (leave blank to keep current): ")
 
             # Update only the fields that are not left blank
