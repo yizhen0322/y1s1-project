@@ -185,7 +185,6 @@ while True:
             year_published = input("Enter year published(leave blank if can't find): ")
         date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
         while not validate_purchased_date(date_purchased):
-            print("Invalid input. Date must be YYYY-MM-DD.")
             date_purchased = input("Enter date purchased (leave blank if can't find): ")
         status = input("Enter status(leave blank if can't find): ")
 
@@ -310,7 +309,6 @@ while True:
                     year_published = input("Enter year published: ")
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased):
-                    print("Invalid input. Date must be YYYY-MM-DD.")
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
             elif search_choice == 3:
                 # If searching by title, don't allow changes to title
@@ -329,7 +327,6 @@ while True:
 
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased):
-                    print("Invalid input. Date must be YYYY-MM-DD.")
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 status = input("Enter new status (leave blank to keep current): ")
 
