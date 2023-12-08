@@ -19,10 +19,10 @@ class Book:
     def add_new_book(self):
         # Method to add a new book to the bookList
         Book.bookList.append(self)
-
+    
     def display_book_list(self):
-        # Method to return the list of all books
-        return Book.bookList
+        # Method to return the list of all books formatted with the | delimiter
+        return ["|".join(str(attribute) for attribute in book) for book in Book.bookList]
 
     def search_books_by_ISBN(self, isbn):
         # Method to search books by ISBN and return a list of matching books
@@ -96,8 +96,9 @@ class Book:
         return self.status
 
     # Method to provide a string representation of the book
+
     def __str__(self):
-        return f"{self.ISBN},{self.author},{self.title},{self.publisher},{self.genre},{self.year_published},{self.date_purchased},{self.status}"
+        return f"{self.ISBN}|{self.author}|{self.title}|{self.publisher}|{self.genre}|{self.year_published}|{self.date_purchased}|{self.status}"
 
     # Getter and setter methods for various book attributes
 
@@ -115,6 +116,7 @@ def read_books_from_file(filename):
                     # Convert "N/A" back to an empty string if needed
                     ISBN = int(ISBN) if ISBN != "N/A" else ""
                     year_published = int(year_published) if year_published != "N/A" else ""
+                    date_purchased = date_purchased if date_purchased != "N/A" else ""
                     
                     # Create a new book object and add it to the book list
                     new_book = Book(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
@@ -137,8 +139,6 @@ def write_books_to_file(filename):
             status = book.get_status() if book.get_status() else "N/A"
 
             file.write(f"{isbn}|{author}|{title}|{publisher}|{genre}|{year_published}|{date_purchased}|{status}\n")
-
-
 
 
 # Functions to validate ISBN , year and purchased date inputs
@@ -164,9 +164,10 @@ def validate_purchased_date(date_purchased):
 # Read books from the file when the program starts
 read_books_from_file("books_StudentID.txt")
 
+
 # Initialize choice and a default book
 choice = 1
-book = Book(0, "", "", "", "", 0, "", "")
+book = Book(0, "", "", "", "", 0, 0, "")
 
 # Main program loop
 while True:
@@ -194,10 +195,10 @@ while True:
             print("Add canceled. Returning to the main menu.")
             continue  # Skip the rest of the loop and go back to the main menu    
         # Get other book details from user
-        author = input("Enter author(leave blank if can't find): ")
-        title = input("Enter title(leave blank if can't find): ")
-        publisher = input("Enter publisher(leave blank if can't find): ")
-        genre = input("Enter genre(leave blank if can't find): ")
+        author = input("Enter author(leave blank if can't find): ").title()
+        title = input("Enter title(leave blank if can't find): ").title()
+        publisher = input("Enter publisher(leave blank if can't find): ").title()
+        genre = input("Enter genre(leave blank if can't find): ").title()
         year_published = input("Enter year published(leave blank if can't find): ")
         while not validate_year(year_published):
             print("Invalid input. Year must be a 4-digit integer.")
@@ -299,10 +300,10 @@ while True:
             # Prompt for updated information based on search criteria
             if search_choice == 1:
                 # If searching by ISBN, don't allow changes to ISBN
-                author = input("Enter new author (leave blank to keep current): ")
-                title = input("Enter new title (leave blank to keep current): ")
-                publisher = input("Enter new publisher (leave blank to keep current): ")
-                genre = input("Enter new genre (leave blank to keep current): ")
+                author = input("Enter new author (leave blank to keep current): ").title()
+                title = input("Enter new title (leave blank to keep current): ").title()
+                publisher = input("Enter new publisher (leave blank to keep current): ").title()
+                genre = input("Enter new genre (leave blank to keep current): ").title()
                 year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
                     print("Invalid input. Year must be a 4-digit integer.")
@@ -319,9 +320,9 @@ while True:
                     print("Invalid input. ISBN must consist of 13 positive integer number.")
                     ISBN = input("Enter ISBN: ")
 
-                title = input("Enter new title (leave blank to keep current): ")
-                publisher = input("Enter new publisher (leave blank to keep current): ")
-                genre = input("Enter new genre (leave blank to keep current): ")
+                title = input("Enter new title (leave blank to keep current): ").title()
+                publisher = input("Enter new publisher (leave blank to keep current): ").title()
+                genre = input("Enter new genre (leave blank to keep current): ").title()
                 year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
                     print("Invalid input. ISBN must consist of 13 positive integer number.")
@@ -336,9 +337,9 @@ while True:
                     print("Invalid input. ISBN must be an integer.")
                     ISBN = input("Enter ISBN: ")
                     
-                author = input("Enter new author (leave blank to keep current): ")
-                publisher = input("Enter new publisher (leave blank to keep current): ")
-                genre = input("Enter new genre (leave blank to keep current): ")
+                author = input("Enter new author (leave blank to keep current): ").title()
+                publisher = input("Enter new publisher (leave blank to keep current): ").title()
+                genre = input("Enter new genre (leave blank to keep current): ").title()
                 year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
                     print("Invalid input. Year must be a 4-digit integer.")
