@@ -141,7 +141,7 @@ def write_books_to_file(filename):
             file.write(f"{isbn}|{author}|{title}|{publisher}|{genre}|{year_published}|{date_purchased}|{status}\n")
 
 
-# Functions to validate ISBN , year and purchased date inputs
+# Functions to validate ISBN, year, purchased date, and status inputs
 def validate_ISBN(ISBN):
         return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0 and len(ISBN) == 13 )
 
@@ -158,6 +158,9 @@ def validate_purchased_date(date_purchased):
     except ValueError:
         print("Invalid input. Please enter a valid date in the format YYYY-MM-DD.")
         return False
+
+def validate_status(status):
+    return status.lower() in ["read", "to-read"]
 
 
 # Main part of the program
@@ -206,7 +209,10 @@ while True:
         date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
         while not validate_purchased_date(date_purchased):
             date_purchased = input("Enter date purchased (leave blank if can't find): ")
-        status = input("Enter status(leave blank if can't find): ")
+        status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+        while not validate_status(status):
+            print("Invalid input. Status must be 'read' or 'to-read'.")
+            status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
 
         # Create a new book object and add it to the book list
         new_book = Book(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
@@ -312,7 +318,10 @@ while True:
                 date_purchased = input("Enter date purchased (leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased):
                     date_purchased = input("Enter date purchased (leave blank if can't find): ")
-                status = input("Enter new status (leave blank to keep current): ")
+                status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                while not validate_status(status):
+                    print("Invalid input. Status must be 'read' or 'to-read'.")
+                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
             elif search_choice == 2:
                 # If searching by author, don't allow changes to author
                 ISBN = input("Enter ISBN: ")
@@ -330,6 +339,10 @@ while True:
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased):
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                while not validate_status(status):
+                    print("Invalid input. Status must be 'read' or 'to-read'.")
+                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
             elif search_choice == 3:
                 # If searching by title, don't allow changes to title
                 ISBN = input("Enter ISBN: ")
@@ -348,7 +361,10 @@ while True:
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased):
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                status = input("Enter new status (leave blank to keep current): ")
+                status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                while not validate_status(status):
+                    print("Invalid input. Status must be 'read' or 'to-read'.")
+                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
 
             # Update only the fields that are not left blank
             for result in search_results:
