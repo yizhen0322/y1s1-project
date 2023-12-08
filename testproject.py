@@ -108,7 +108,7 @@ def read_books_from_file(filename):
         with open(filename, 'r') as file:
             lines = file.readlines()
             for line in lines:
-                data = line.strip().split(',')
+                data = line.strip().split("|")  
                 if len(data) == 8:
                     ISBN, author, title, publisher, genre, year_published, date_purchased, status = data
                     new_book = Book(int(ISBN), author, title, publisher, genre, int(year_published), date_purchased, status)
@@ -120,7 +120,7 @@ def read_books_from_file(filename):
 def write_books_to_file(filename):
     with open(filename, 'w') as file:
         for book in Book.bookList:
-            file.write(f"{book.get_ISBN()},{book.get_author()},{book.get_title()},{book.get_publisher()},{book.get_genre()},{book.get_year_published()},{book.get_date_purchased()},{book.get_status()}\n")
+            file.write(f"{book.get_ISBN()}|{book.get_author()}|{book.get_title()}|{book.get_publisher()}|{book.get_genre()}|{book.get_year_published()}|{book.get_date_purchased()}|{book.get_status()}\n")
 
 # Functions to validate ISBN , year and purchased date inputs
 def validate_ISBN(ISBN):
