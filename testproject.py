@@ -1,20 +1,21 @@
 import datetime
 
 class Book:
-    bookList = []  # Class variable to store a list of all books
+    bookList = []
 
     def __init__(self, ISBN, author, title, publisher, genre, year_published, date_purchased, status):
-        # Constructor to initialize a new Book object with provided attributes
+    # Constructor to initialize a new Book object with provided attributes
         self.ISBN, self.author, self.title, self.publisher, self.genre, self.year_published, self.date_purchased, self.status = (
-            ISBN,
-            author,
-            title,
-            publisher,
-            genre,
-            year_published,
-            date_purchased,
-            status,
-        )
+            ISBN if ISBN != "N/A" else "",
+            author if author != "N/A" else "",
+            title if title != "N/A" else "",
+            publisher if publisher != "N/A" else "",
+            genre if genre != "N/A" else "",
+            year_published if year_published and year_published != "N/A" else "",
+            date_purchased if date_purchased != "N/A" else "",
+            status if status != "N/A" else "",
+        )   
+
 
     def add_new_book(self):
         # Method to add a new book to the bookList
@@ -22,7 +23,7 @@ class Book:
     
     def display_book_list(self):
         # Method to return the list of all books formatted with the | delimiter
-        return ["|".join(str(attribute) for attribute in book) for book in Book.bookList]
+        return ["|".join(str(getattr(book, attribute)) for attribute in ["ISBN", "author", "title", "publisher", "genre", "year_published", "date_purchased", "status"]) for book in Book.bookList]
 
     def search_books_by_ISBN(self, isbn):
         # Method to search books by ISBN and return a list of matching books
@@ -114,10 +115,15 @@ def read_books_from_file(filename):
                     ISBN, author, title, publisher, genre, year_published, date_purchased, status = data
 
                     # Convert "N/A" back to an empty string if needed
-                    ISBN = int(ISBN) if ISBN != "N/A" else ""
-                    year_published = int(year_published) if year_published != "N/A" else ""
+                    ISBN = ISBN if ISBN != "N/A" else ""
+                    author = author if author != "N/A" else ""
+                    title = title if title != "N/A" else ""
+                    publisher = publisher if publisher != "N/A" else ""
+                    genre = genre if genre != "N/A" else ""
+                    year_published = year_published if year_published and year_published != "N/A" else ""
                     date_purchased = date_purchased if date_purchased != "N/A" else ""
-                    
+                    status = status if status != "N/A" else ""
+
                     # Create a new book object and add it to the book list
                     new_book = Book(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
                     new_book.add_new_book()
@@ -146,7 +152,7 @@ def validate_ISBN(ISBN):
         return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0 and len(ISBN) == 13 )
 
 def validate_year(year):
-        return year == "" or (year.isdigit() and len(year) == 4)
+    return year is None or (year.isdigit() and len(year) == 4)
 
 def validate_purchased_date(date_purchased):
     try:
