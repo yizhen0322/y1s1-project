@@ -108,19 +108,38 @@ def read_books_from_file(filename):
         with open(filename, 'r') as file:
             lines = file.readlines()
             for line in lines:
-                data = line.strip().split("|")  
+                data = line.strip().split("|")
                 if len(data) == 8:
                     ISBN, author, title, publisher, genre, year_published, date_purchased, status = data
-                    new_book = Book(int(ISBN), author, title, publisher, genre, int(year_published), date_purchased, status)
+
+                    # Convert "N/A" back to an empty string if needed
+                    ISBN = int(ISBN) if ISBN != "N/A" else ""
+                    year_published = int(year_published) if year_published != "N/A" else ""
+                    
+                    # Create a new book object and add it to the book list
+                    new_book = Book(ISBN, author, title, publisher, genre, year_published, date_purchased, status)
                     new_book.add_new_book()
     except FileNotFoundError:
         print(f"The file {filename} does not exist. Starting with an empty book list.")
+
 
 # Function to write books to a file
 def write_books_to_file(filename):
     with open(filename, 'w') as file:
         for book in Book.bookList:
-            file.write(f"{book.get_ISBN()}|{book.get_author()}|{book.get_title()}|{book.get_publisher()}|{book.get_genre()}|{book.get_year_published()}|{book.get_date_purchased()}|{book.get_status()}\n")
+            isbn = book.get_ISBN() if book.get_ISBN() else "N/A"
+            author = book.get_author() if book.get_author() else "N/A"
+            title = book.get_title() if book.get_title() else "N/A"
+            publisher = book.get_publisher() if book.get_publisher() else "N/A"
+            genre = book.get_genre() if book.get_genre() else "N/A"
+            year_published = book.get_year_published() if book.get_year_published() else "N/A"
+            date_purchased = book.get_date_purchased() if book.get_date_purchased() else "N/A"
+            status = book.get_status() if book.get_status() else "N/A"
+
+            file.write(f"{isbn}|{author}|{title}|{publisher}|{genre}|{year_published}|{date_purchased}|{status}\n")
+
+
+
 
 # Functions to validate ISBN , year and purchased date inputs
 def validate_ISBN(ISBN):
