@@ -1,30 +1,30 @@
-9781785785719,Yasha Levine,Surveillance Valley,Icon Books,Politics,2019,02-01-2020,read
-9780241976630,John Maeda,How to Speak Machine,Portfolio UK,Artificial Intelligence,2019,02-01-2020,to-read
-9781119055808,Andre De Vries,R For Dummies,John Wiley,Programming,2015,12-08-2016,read
-9781785785720,Jane Doe,Book 4,Publisher 4,Genre 4,2020,03-01-2020,read
-9781785785731,John Smith,Book 5,Publisher 5,Genre 5,2021,04-01-2020,to-read
-9781785785742,Mary Johnson,Book 6,Publisher 6,Genre 6,2022,05-01-2020,read
-9781785785753,James Brown,Book 7,Publisher 7,Genre 7,2023,06-01-2020,to-read
-9781785785764,Patricia Davis,Book 8,Publisher 8,Genre 8,2024,07-01-2020,read
-9781785785775,Robert Miller,Book 9,Publisher 9,Genre 9,2025,08-01-2020,to-read
-9781785785786,Linda Wilson,Book 10,Publisher 10,Genre 10,2026,09-01-2020,read
-9781785785797,Michael Moore,Book 11,Publisher 11,Genre 11,2027,10-01-2020,to-read
-9781785785808,Elizabeth Taylor,Book 12,Publisher 12,Genre 12,2028,11-01-2020,read
-9781785785819,William Anderson,Book 13,Publisher 13,Genre 13,2029,12-01-2020,to-read
-9781785785820,Jennifer Thomas,Book 14,Publisher 14,Genre 14,2030,13-01-2020,read
-9781785785831,David Jackson,Book 15,Publisher 15,Genre 15,2031,14-01-2020,to-read
-9781785785842,Sarah White,Book 16,Publisher 16,Genre 16,2032,15-01-2020,read
-9781785785853,Richard Harris,Book 17,Publisher 17,Genre 17,2033,16-01-2020,to-read
-9781785785864,Jessica Martin,Book 18,Publisher 18,Genre 18,2034,17-01-2020,read
-9781785785875,Joseph Thompson,Book 19,Publisher 19,Genre 19,2035,18-01-2020,to-read
-9781785785886,Margaret Garcia,Book 20,Publisher 20,Genre 20,2036,19-01-2020,read
-9781785785897,Charles Martinez,Book 21,Publisher 21,Genre 21,2037,20-01-2020,to-read
-9781785785908,Susan Robinson,Book 22,Publisher 22,Genre 22,2038,21-01-2020,read
-9781785785919,Ronald Clark,Book 23,Publisher 23,Genre 23,2039,22-01-2020,to-read
-9781785785920,Dorothy Rodriguez,Book 24,Publisher 24,Genre 24,2040,23-01-2020,read
-9781785785931,Thomas Lewis,Book 25,Publisher 25,Genre 25,2041,24-01-2020,to-read
-9781785785942,Nancy Walker,Book 26,Publisher 26,Genre 26,2042,25-01-2020,read
-9781785785953,Paul Allen,Book 27,Publisher 27,Genre 27,2043,26-01-2020,to-read
-9781785785964,Betty Perez,Book 28,Publisher 28,Genre 28,2044,27-01-2020,read
-9781785785975,Thomas Allen,Book 29,Publisher 29,Genre 29,2045,28-01-2020,to-read
-9781785785986,Betty Perez,Book 30,Publisher 30,Genre 30,2046,29-01-2020,read
+9781785785719|Yasha Levine|Surveillance Valley|Icon Books|Politics|2019|02-01-2020|read
+9780241976630|John Maeda|How to Speak Machine|Portfolio UK|Artificial Intelligence|2019|02-01-2020|to-read
+9781119055808|Andre De Vries|R For Dummies|John Wiley|Programming|2015|12-08-2016|read
+9781785785720|Jane Doe|Book 4|Publisher 4|Genre 4|2020|03-01-2020|read
+9781785785731|John Smith|Book 5|Publisher 5|Genre 5|2021|04-01-2020|to-read
+9781785785742|Mary Johnson|Book 6|Publisher 6|Genre 6|2022|05-01-2020|read
+9781785785753|James Brown|Book 7|Publisher 7|Genre 7|2023|06-01-2020|to-read
+9781785785764|Patricia Davis|Book 8|Publisher 8|Genre 8|2024|07-01-2020|read
+9781785785775|Robert Miller|Book 9|Publisher 9|Genre 9|2025|08-01-2020|to-read
+9781785785786|Linda Wilson|Book 10|Publisher 10|Genre 10|2026|09-01-2020|read
+9781785785797|Michael Moore|Book 11|Publisher 11|Genre 11|2027|10-01-2020|to-read
+9781785785808|Elizabeth Taylor|Book 12|Publisher 12|Genre 12|2028|11-01-2020|read
+9781785785819|William Anderson|Book 13|Publisher 13|Genre 13|2029|12-01-2020|to-read
+9781785785820|Jennifer Thomas|Book 14|Publisher 14|Genre 14|2030|13-01-2020|read
+9781785785831|David Jackson|Book 15|Publisher 15|Genre 15|2031|14-01-2020|to-read
+9781785785842|Sarah White|Book 16|Publisher 16|Genre 16|2032|15-01-2020|read
+9781785785853|Richard Harris|Book 17|Publisher 17|Genre 17|2033|16-01-2020|to-read
+9781785785864|Jessica Martin|Book 18|Publisher 18|Genre 18|2034|17-01-2020|read
+9781785785875|Joseph Thompson|Book 19|Publisher 19|Genre 19|2035|18-01-2020|to-read
+9781785785886|Margaret Garcia|Book 20|Publisher 20|Genre 20|2036|19-01-2020|read
+9781785785897|Charles Martinez|Book 21|Publisher 21|Genre 21|2037|20-01-2020|to-read
+9781785785908|Susan Robinson|Book 22|Publisher 22|Genre 22|2038|21-01-2020|read
+9781785785919|Ronald Clark|Book 23|Publisher 23|Genre 23|2039|22-01-2020|to-read
+9781785785920|Dorothy Rodriguez|Book 24|Publisher 24|Genre 24|2040|23-01-2020|read
+9781785785931|Thomas Lewis|Book 25|Publisher 25|Genre 25|2041|24-01-2020|to-read
+9781785785942|Nancy Walker|Book 26|Publisher 26|Genre 26|2042|25-01-2020|read
+9781785785953|Paul Allen|Book 27|Publisher 27|Genre 27|2043|26-01-2020|to-read
+9781785785964|Betty Perez|Book 28|Publisher 28|Genre 28|2044|27-01-2020|read
+9781785785975|Thomas Allen|Book 29|Publisher 29|Genre 29|2045|28-01-2020|to-read
+9781785785986|Betty Perez|Book 30|Publisher 30|Genre 30|2046|29-01-2020|read
