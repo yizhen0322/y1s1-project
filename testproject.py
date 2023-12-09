@@ -228,50 +228,98 @@ while True:
         # Option 2: Remove book
         search_results = []
         try:
-            search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
-        
+            search_choice = input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice (leave blank to cancel): ")
+
+            if not search_choice:
+                print("Removal canceled.")
+                # Exit the option without further processing
+                continue
+
+            search_choice = int(search_choice)
+
             if search_choice == 1:
-                ISBN = input("Enter ISBN: ")
+                ISBN = input("Enter ISBN (leave blank to cancel): ")
+                if not ISBN:
+                    print("Removal canceled.")
+                    # Exit the option without further processing
+                    continue
+
                 while not validate_ISBN(ISBN):
-                    print("Invalid input. ISBN must consist of 13 positive integer number.(leave blank for cancel)")
+                    print("Invalid input. ISBN must consist of 13 positive integer numbers. (leave blank for cancel)")
                     ISBN = input("Enter ISBN: ")
                 search_results = book.search_books_by_ISBN(ISBN)
             elif search_choice == 2:
-                author = input("Enter author: ")
+                author = input("Enter author (leave blank to cancel): ")
+                if not author:
+                    print("Removal canceled.")
+                    # Exit the option without further processing
+                    continue
+
                 search_results = book.search_books_by_author(author)
             elif search_choice == 3:
-                title = input("Enter title: ")
+                title = input("Enter title (leave blank to cancel): ")
+                if not title:
+                    print("Removal canceled.")
+                    # Exit the option without further processing
+                    continue
+
                 search_results = book.search_books_by_title(title)
             else:
                 print("Invalid choice. Please enter a valid option.")
-                continue  # This will go back to the beginning of the loop
 
         except ValueError:
             print("Invalid input. Please enter a valid integer.")
-        # You may choose to handle this differently, like asking the user to input the choice again.
 
+        # Display the matching books with index
+        print("\nMatching Books:")
+        for idx, result in enumerate(search_results):
+            print(f"{idx + 1}. {result}")
 
-        if not search_results:
-            print("\nNo matching books found.")
-        else:
-            print("\nMatching Books:")
-            for result in search_results:
-                print(result)
-         # Prompt for confirmation to delete
-        
-            while True:
-                delete_confirmation = input("Do you want to delete the matched book(s)? (yes/no): ").lower()
-                if delete_confirmation in ["yes", "no"]:
+        # Prompt for user input to select book(s) for removal
+        while True:
+            try:
+                user_input = input("Enter the index of the book to remove (or 'all' to remove all matching books), or 'cancel' to cancel: ").lower()
+
+                if user_input == 'cancel':
+                    print("Removal canceled.")
+                    break
+                elif user_input == 'all':
+                    # Remove all matching books
+                    for result in search_results:
+                        Book.bookList.remove(result)
+                    print("Delete successful.")
                     break
                 else:
-                    print("Invalid input. Please enter 'yes' or 'no'.")
+                    # Try to convert the input to an integer
+                    selected_index = int(user_input) - 1
+                    if 0 <= selected_index < len(search_results):
+                        # Remove the selected book
+                        selected_book = search_results[selected_index]
 
-            if delete_confirmation == "yes":
-                for result in search_results:
-                    Book.bookList.remove(result)
-                print("Delete successful.")
-            else:
-                print("Delete canceled.")
+                       # Display the selected book for confirmation
+                        print(f"\nSelected Book for Removal:\n{selected_book}")
+
+                        # Prompt for confirmation to delete the selected book
+                        while True:
+                            delete_confirmation = input("Do you want to delete the selected book? (yes/no): ").lower()
+                            if delete_confirmation in ["yes", "no"]:
+                                break
+                            else:
+                                print("Invalid input. Please enter 'yes' or 'no'.")
+
+                        if delete_confirmation == "yes":
+                            # Remove the selected book
+                            Book.bookList.remove(selected_book)
+                            print("Delete successful.")
+                            break
+                        else:
+                            print("Delete canceled.")
+                            break
+                    else:
+                        print("Invalid index. Please enter a valid index or 'cancel'.")
+            except ValueError:
+                print("Invalid input. Please enter a valid index or 'cancel'.")
+
                   
 
     elif choice == 3:
