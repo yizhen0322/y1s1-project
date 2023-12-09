@@ -1,30 +1,21 @@
-9781785785719|Yasha Levine|Surveillance Valley|Icon Books|Politics|2019|02-01-2020|read
-9780241976630|John Maeda|How to Speak Machine|Portfolio UK|Artificial Intelligence|2019|02-01-2020|to-read
-9781119055808|Andre De Vries|R For Dummies|John Wiley|Programming|2015|12-08-2016|read
-9781785785720|Jane Doe|Book 4|Publisher 4|Genre 4|2020|03-01-2020|read
-9781785785731|John Smith|Book 5|Publisher 5|Genre 5|2021|04-01-2020|to-read
-9781785785742|Mary Johnson|Book 6|Publisher 6|Genre 6|2022|05-01-2020|read
-9781785785753|James Brown|Book 7|Publisher 7|Genre 7|2023|06-01-2020|to-read
-9781785785764|Patricia Davis|Book 8|Publisher 8|Genre 8|2024|07-01-2020|read
-9781785785775|Robert Miller|Book 9|Publisher 9|Genre 9|2025|08-01-2020|to-read
-9781785785786|Linda Wilson|Book 10|Publisher 10|Genre 10|2026|09-01-2020|read
-9781785785797|Michael Moore|Book 11|Publisher 11|Genre 11|2027|10-01-2020|to-read
-9781785785808|Elizabeth Taylor|Book 12|Publisher 12|Genre 12|2028|11-01-2020|read
-9781785785819|William Anderson|Book 13|Publisher 13|Genre 13|2029|12-01-2020|to-read
-9781785785820|Jennifer Thomas|Book 14|Publisher 14|Genre 14|2030|13-01-2020|read
-9781785785831|David Jackson|Book 15|Publisher 15|Genre 15|2031|14-01-2020|to-read
-9781785785842|Sarah White|Book 16|Publisher 16|Genre 16|2032|15-01-2020|read
-9781785785853|Richard Harris|Book 17|Publisher 17|Genre 17|2033|16-01-2020|to-read
-9781785785864|Jessica Martin|Book 18|Publisher 18|Genre 18|2034|17-01-2020|read
-9781785785875|Joseph Thompson|Book 19|Publisher 19|Genre 19|2035|18-01-2020|to-read
-9781785785886|Margaret Garcia|Book 20|Publisher 20|Genre 20|2036|19-01-2020|read
-9781785785897|Charles Martinez|Book 21|Publisher 21|Genre 21|2037|20-01-2020|to-read
-9781785785908|Susan Robinson|Book 22|Publisher 22|Genre 22|2038|21-01-2020|read
-9781785785919|Ronald Clark|Book 23|Publisher 23|Genre 23|2039|22-01-2020|to-read
-9781785785920|Dorothy Rodriguez|Book 24|Publisher 24|Genre 24|2040|23-01-2020|read
-9781785785931|Thomas Lewis|Book 25|Publisher 25|Genre 25|2041|24-01-2020|to-read
-9781785785942|Nancy Walker|Book 26|Publisher 26|Genre 26|2042|25-01-2020|read
-9781785785953|Paul Allen|Book 27|Publisher 27|Genre 27|2043|26-01-2020|to-read
-9781785785964|Betty Perez|Book 28|Publisher 28|Genre 28|2044|27-01-2020|read
-9781785785975|Thomas Allen|Book 29|Publisher 29|Genre 29|2045|28-01-2020|to-read
-9781785785986|Betty Perez|Book 30|Publisher 30|Genre 30|2046|29-01-2020|read
+9780765397539|Martha Wells|All Systems Red: The Murderbot Diaries (The Murderbot Diaries, 1)|Tordotcom|Science Fiction, High Tech|2017
+9780425027066|Frank Herbert|Dune|Berkley Books|Science Fiction, Space Opera, Adventure, Epic Fantasy Fiction, Modern & Contemporary Fiction (Post c 1945)|1975
+9781803281698|A G Riddle|Quantum Radio (Multiverse)|Head of Zeus|Technological Fiction, Science Fiction, Time Travel, Thriller/Suspense, Physics|2023
+9780307476319|Cormac McCarthy|The Road (Movie Tie-in Edition 2009) (Vintage International)|Vintage Books USA|Apocalyptic & Post-Apocalyptic Science Fiction, Media Tie-In, Literary|2009
+9781647228170|Insight Editions|The Official Minecraft Coloring Adventures Book: Create, Explore, Color! : for Young Artists and Kids 5-10 (Gaming)|Insight Kids|Video & Electronic Games, Coloring Books, Popular Culture|2022
+9781338635171|Suzanne Collins|The Ballad of Songbirds and Snakes (A Hunger Games Novel) (The Hunger Games)|Scholastic Press|Young Adult Fiction, Dystopian, Action & Adventure, Political Thriller Fiction, Science Fiction|2020
+9781680524109|Parragon Books|The Art of Mixology: Classic Cocktails and Curious Concoctions|Parragon|Cooking, Entertaining, Beverages, Wine & Spirits|2018
+9780062820174|Joanna Gaines|Magnolia Table, Volume 3: A Collection of Recipes for Gathering|William Morrow Cookbooks|Regional & Ethnic Cooking, Media Tie-In, Entertaining, TV / Celebrity Chef Cookbooks, National & Regional Cuisine, Cooking for Parties|2023
+9780143127741|Bessel Van Der Kolk|The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma|Penguin Books|Psychology, Psychopathology, Post-Traumatic Stress Disorder (PTSD), Mental Health, Psychiatry, Therapy, Treatment, Stress Disorders, Post-Traumatic|2015
+9780307742483|David Grann|Killers of the Flower Moon: The Osage Murders and the Birth of the FBI|Vintage|True Crime, Murder, United States 20th Century History, Native American History|2018
+9781501110368|Colleen Hoover|It Ends with Us: A Novel|Atria Books|Contemporary Romance, New Adult Romance Fiction, Contemporary Women’s Fiction|2016
+9781668640449|Liz Cheney|Oath and Honor: A Memoir and a Warning|Little Brown and Company|History, Modern, 21st Century, Biography & Autobiography, Political, Personal Memoirs|2023
+9781549164071|Nathan Harris|The Sweetness of Water|Hachette Book Group|Fiction, Southern, Historical, Civil War Era, Gay|2021
+9780593207093|James Clear|Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones|Penguin Audiobooks|Personal Growth, Social Psychology, Business & Economics > Organizational Behavior|2019
+9781797159508|Britney Spears|The Woman in Me|Simon & Schuster Audio|Biography & Autobiography > Rich & Famous, Entertainment & Performing Arts, Composers & Musicians|2023
+9780451532244|Mary Shelley|Frankenstein|Signet Book|Fiction > Science Fiction > Adventure, Horror, Classic Fiction|2013
+9780915689002|George J. Pratt, Dennis P. Wood, Brian M. Alman|A Clinical Hypnosis Primer|Psychology & Consulting Assoc Press, La Jolla, CA|N/A|1984
+9780930626075|Charles T. Tart|On Being Stoned: A Psychological Study of Marijuana Intoxication|Science and Behavior Books, 1971|N/A|1971
+9781571744845|Irene D.O. Hickman|Mind Probe-Hypnosis|Hickman Systems Pub, 1985|N/A|1985
+9780385534260|Adrian Finkelstein|Marilyn Monroe Returns: The Healing of a Soul|Hampton Roads Publishing, U.S.A., 2006|N/A|2006
+9780399590504|David Grann|The Wager: A Tale of Shipwreck, Mutiny, and Murder|Doubleday, New York, 2023|N/A|2023
