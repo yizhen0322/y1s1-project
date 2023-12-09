@@ -150,7 +150,7 @@ def validate_ISBN(ISBN):
         return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0 and len(ISBN) == 13 )
 
 def validate_year(year):
-    return year is None or (year.isdigit() and len(year) == 4)
+    return year == "" or (year.isdigit() and len(year) == 4)
 
 def validate_purchased_date(date_purchased):
     try:
@@ -164,7 +164,7 @@ def validate_purchased_date(date_purchased):
         return False
 
 def validate_status(status):
-    return status.lower() in ["read", "to-read"]
+    return status.lower() in ["read", "to-read"] or status == ""
 
 
 # Main part of the program
