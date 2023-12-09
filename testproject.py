@@ -101,8 +101,6 @@ class Book:
     def __str__(self):
         return f"{self.ISBN}|{self.author}|{self.title}|{self.publisher}|{self.genre}|{self.year_published}|{self.date_purchased}|{self.status}"
 
-    # Getter and setter methods for various book attributes
-
 
 # Function to read books from a file and populate the bookList
 def read_books_from_file(filename):
