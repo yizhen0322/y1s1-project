@@ -1,9 +1,9 @@
-9780765397539|Martha Wells|All Systems Red: The Murderbot Diaries (The Murderbot Diaries, 1)|Tordotcom|Science Fiction, High Tech|2017
-9780425027066|Frank Herbert|Dune|Berkley Books|Science Fiction, Space Opera, Adventure, Epic Fantasy Fiction, Modern & Contemporary Fiction (Post c 1945)|1975
-9781803281698|A G Riddle|Quantum Radio (Multiverse)|Head of Zeus|Technological Fiction, Science Fiction, Time Travel, Thriller/Suspense, Physics|2023
-9780307476319|Cormac McCarthy|The Road (Movie Tie-in Edition 2009) (Vintage International)|Vintage Books USA|Apocalyptic & Post-Apocalyptic Science Fiction, Media Tie-In, Literary|2009
+9780765397539|Martha Wells|All Systems Red: The Murderbot Diaries|Tordotcom|Science Fiction, High Tech|2017
+9780425027066|Frank Herbert|Dune|Berkley Books|Science Fiction, Space Opera, Adventure, Epic Fantasy Fiction, Modern & Contemporary Fiction|1975
+9781803281698|A G Riddle|Quantum Radio|Head of Zeus|Technological Fiction, Science Fiction, Time Travel, Thriller/Suspense, Physics|2023
+9780307476319|Cormac McCarthy|The Road|Vintage Books USA|Apocalyptic & Post-Apocalyptic Science Fiction, Media Tie-In, Literary|2009
 9781647228170|Insight Editions|The Official Minecraft Coloring Adventures Book: Create, Explore, Color! : for Young Artists and Kids 5-10 (Gaming)|Insight Kids|Video & Electronic Games, Coloring Books, Popular Culture|2022
-9781338635171|Suzanne Collins|The Ballad of Songbirds and Snakes (A Hunger Games Novel) (The Hunger Games)|Scholastic Press|Young Adult Fiction, Dystopian, Action & Adventure, Political Thriller Fiction, Science Fiction|2020
+9781338635171|Suzanne Collins|The Ballad of Songbirds and Snakes(The Hunger Games)|Scholastic Press|Young Adult Fiction, Dystopian, Action & Adventure, Political Thriller Fiction, Science Fiction|2020
 9781680524109|Parragon Books|The Art of Mixology: Classic Cocktails and Curious Concoctions|Parragon|Cooking, Entertaining, Beverages, Wine & Spirits|2018
 9780062820174|Joanna Gaines|Magnolia Table, Volume 3: A Collection of Recipes for Gathering|William Morrow Cookbooks|Regional & Ethnic Cooking, Media Tie-In, Entertaining, TV / Celebrity Chef Cookbooks, National & Regional Cuisine, Cooking for Parties|2023
 9780143127741|Bessel Van Der Kolk|The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma|Penguin Books|Psychology, Psychopathology, Post-Traumatic Stress Disorder (PTSD), Mental Health, Psychiatry, Therapy, Treatment, Stress Disorders, Post-Traumatic|2015
@@ -16,6 +16,6 @@
 9780451532244|Mary Shelley|Frankenstein|Signet Book|Fiction > Science Fiction > Adventure, Horror, Classic Fiction|2013
 9780915689002|George J. Pratt, Dennis P. Wood, Brian M. Alman|A Clinical Hypnosis Primer|Psychology & Consulting Assoc Press, La Jolla, CA|N/A|1984
 9780930626075|Charles T. Tart|On Being Stoned: A Psychological Study of Marijuana Intoxication|Science and Behavior Books, 1971|N/A|1971
-9781571744845|Irene D.O. Hickman|Mind Probe-Hypnosis|Hickman Systems Pub, 1985|N/A|1985
-9780385534260|Adrian Finkelstein|Marilyn Monroe Returns: The Healing of a Soul|Hampton Roads Publishing, U.S.A., 2006|N/A|2006
-9780399590504|David Grann|The Wager: A Tale of Shipwreck, Mutiny, and Murder|Doubleday, New York, 2023|N/A|2023
+9781571744845|Irene D.O. Hickman|Mind Probe-Hypnosis|Hickman Systems|N/A|1985
+9780385534260|Adrian Finkelstein|Marilyn Monroe Returns: The Healing of a Soul|Hampton Roads|N/A|2006
+9780399590504|David Grann|The Wager: A Tale of Shipwreck, Mutiny, and Murder|Doubleday|N/A|2023
