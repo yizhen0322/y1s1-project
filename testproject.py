@@ -156,7 +156,7 @@ def validate_year(year):
 
         current_year = datetime.datetime.now().year
         return 0 <= int(year) <= current_year
-            return true
+            return True
         else:
             print(f"Invalid input. Year must be a 4-digit integer not exceeding the current year ({current_year}).")
             return False
