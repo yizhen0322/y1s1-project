@@ -152,12 +152,17 @@ def validate_ISBN(ISBN):
 def validate_year(year):
     return year == "" or (year.isdigit() and len(year) == 4)
 
-def validate_purchased_date(date_purchased):
+def validate_purchased_date(date_purchased, year_published):
     try:
         if date_purchased == "":
             return True  # Allow blank input
-        # Try to parse the input as a date
-        datetime.datetime.strptime(date_purchased, "%Y-%m-%d")
+        # If year_published is not empty, check if the purchase date is after the published year
+        if year_published:
+            purchased_date = datetime.datetime.strptime(date_purchased, "%Y-%m-%d")
+            if purchased_date.year < int(year_published):
+                print("Invalid input. Purchase date must be after the published year.")
+                return False
+
         return True
     except ValueError:
         print("Invalid input. Please enter a valid date in the format YYYY-MM-DD.")
@@ -209,10 +214,11 @@ while True:
         year_published = input("Enter year published(leave blank if can't find): ")
         while not validate_year(year_published):
             print("Invalid input. Year must be a 4-digit integer.")
-            year_published = input("Enter year published(leave blank if can't find): ")
+        year_published = input("Enter year published(leave blank if can't find): ")
         date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-        while not validate_purchased_date(date_purchased):
-            date_purchased = input("Enter date purchased (leave blank if can't find): ")
+        while not validate_purchased_date(date_purchased, year_published):
+            print("Invalid input. Purchase date must be after the published year.")
+            date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
         status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
         while not validate_status(status):
             print("Invalid input. Status must be 'read' or 'to-read'.")
@@ -366,10 +372,10 @@ while True:
                 while not (validate_year(year_published)):
                     print("Invalid input. Year must be a 4-digit integer.")
                     year_published = input("Enter year published: ")
-
-                date_purchased = input("Enter date purchased (leave blank if can't find): ")
-                while not validate_purchased_date(date_purchased):
-                    date_purchased = input("Enter date purchased (leave blank if can't find): ")
+                date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                while not validate_purchased_date(date_purchased, year_published):
+                    print("Invalid input. Purchase date must be after the published year.")
+                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
                 while not validate_status(status):
                     print("Invalid input. Status must be 'read' or 'to-read'.")
@@ -380,7 +386,6 @@ while True:
                 while not validate_ISBN(ISBN):
                     print("Invalid input. ISBN must consist of 13 positive integer number.")
                     ISBN = input("Enter ISBN: ")
-
                 title = input("Enter new title (leave blank to keep current): ").title()
                 publisher = input("Enter new publisher (leave blank to keep current): ").title()
                 genre = input("Enter new genre (leave blank to keep current): ").title()
@@ -389,7 +394,8 @@ while True:
                     print("Invalid input. ISBN must consist of 13 positive integer number.")
                     year_published = input("Enter year published: ")
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                while not validate_purchased_date(date_purchased):
+                while not validate_purchased_date(date_purchased, year_published):
+                    print("Invalid input. Purchase date must be after the published year.")
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
                 while not validate_status(status):
@@ -400,8 +406,7 @@ while True:
                 ISBN = input("Enter ISBN: ")
                 while not validate_ISBN(ISBN):
                     print("Invalid input. ISBN must be an integer.")
-                    ISBN = input("Enter ISBN: ")
-                    
+                    ISBN = input("Enter ISBN: ")                    
                 author = input("Enter new author (leave blank to keep current): ").title()
                 publisher = input("Enter new publisher (leave blank to keep current): ").title()
                 genre = input("Enter new genre (leave blank to keep current): ").title()
@@ -409,9 +414,9 @@ while True:
                 while not (validate_year(year_published)):
                     print("Invalid input. Year must be a 4-digit integer.")
                     year_published = input("Enter year published: ")
-
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                while not validate_purchased_date(date_purchased):
+                while not validate_purchased_date(date_purchased, year_published):
+                    print("Invalid input. Purchase date must be after the published year.")
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
                 while not validate_status(status):
