@@ -1,21 +1,21 @@
 9780765397539|Martha Wells|All Systems Red: The Murderbot Diaries|Tordotcom|Science Fiction, High Tech|2017|2018-7-12|read
-9780425027066|Frank Herbert|Dune|Berkley Books|Science Fiction, Space Opera, Adventure, Epic Fantasy Fiction, Modern & Contemporary Fiction|1975
-9781803281698|A G Riddle|Quantum Radio|Head of Zeus|Technological Fiction, Science Fiction, Time Travel, Thriller/Suspense, Physics|2023
-9780307476319|Cormac McCarthy|The Road|Vintage Books USA|Apocalyptic & Post-Apocalyptic Science Fiction, Media Tie-In, Literary|2009
-9781647228170|Insight Editions|The Official Minecraft Coloring Adventures Book: Create, Explore, Color! : for Young Artists and Kids 5-10 (Gaming)|Insight Kids|Video & Electronic Games, Coloring Books, Popular Culture|2022
-9781338635171|Suzanne Collins|The Ballad of Songbirds and Snakes(The Hunger Games)|Scholastic Press|Young Adult Fiction, Dystopian, Action & Adventure, Political Thriller Fiction, Science Fiction|2020
-9781680524109|Parragon Books|The Art of Mixology: Classic Cocktails and Curious Concoctions|Parragon|Cooking, Entertaining, Beverages, Wine & Spirits|2018
-9780062820174|Joanna Gaines|Magnolia Table, Volume 3: A Collection of Recipes for Gathering|William Morrow Cookbooks|Regional & Ethnic Cooking, Media Tie-In, Entertaining, TV / Celebrity Chef Cookbooks, National & Regional Cuisine, Cooking for Parties|2023
-9780143127741|Bessel Van Der Kolk|The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma|Penguin Books|Psychology, Psychopathology, Post-Traumatic Stress Disorder (PTSD), Mental Health, Psychiatry, Therapy, Treatment, Stress Disorders, Post-Traumatic|2015
-9780307742483|David Grann|Killers of the Flower Moon: The Osage Murders and the Birth of the FBI|Vintage|True Crime, Murder, United States 20th Century History, Native American History|2018
-9781501110368|Colleen Hoover|It Ends with Us: A Novel|Atria Books|Contemporary Romance, New Adult Romance Fiction, Contemporary Women’s Fiction|2016
-9781668640449|Liz Cheney|Oath and Honor: A Memoir and a Warning|Little Brown and Company|History, Modern, 21st Century, Biography & Autobiography, Political, Personal Memoirs|2023
-9781549164071|Nathan Harris|The Sweetness of Water|Hachette Book Group|Fiction, Southern, Historical, Civil War Era, Gay|2021
-9780593207093|James Clear|Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones|Penguin Audiobooks|Personal Growth, Social Psychology, Business & Economics > Organizational Behavior|2019
-9781797159508|Britney Spears|The Woman in Me|Simon & Schuster Audio|Biography & Autobiography > Rich & Famous, Entertainment & Performing Arts, Composers & Musicians|2023
-9780451532244|Mary Shelley|Frankenstein|Signet Book|Fiction > Science Fiction > Adventure, Horror, Classic Fiction|2013
-9780915689002|George J. Pratt, Dennis P. Wood, Brian M. Alman|A Clinical Hypnosis Primer|Psychology & Consulting Assoc Press, La Jolla, CA|N/A|1984
-9780930626075|Charles T. Tart|On Being Stoned: A Psychological Study of Marijuana Intoxication|Science and Behavior Books, 1971|N/A|1971
-9781571744845|Irene D.O. Hickman|Mind Probe-Hypnosis|Hickman Systems|N/A|1985
-9780385534260|Adrian Finkelstein|Marilyn Monroe Returns: The Healing of a Soul|Hampton Roads|N/A|2006
-9780399590504|David Grann|The Wager: A Tale of Shipwreck, Mutiny, and Murder|Doubleday|N/A|2023
+9780425027066|Frank Herbert|Dune|Berkley Books|Science Fiction, Space Opera, Adventure, Epic Fantasy Fiction, Modern & Contemporary Fiction|1975|2019-05-20|to-read
+9781803281698|A G Riddle|Quantum Radio|Head of Zeus|Technological Fiction, Science Fiction, Time Travel, Thriller/Suspense, Physics|2023|2022-08-15|to-read
+9780307476319|Cormac McCarthy|The Road|Vintage Books USA|Apocalyptic & Post-Apocalyptic Science Fiction, Media Tie-In, Literary|2009|2021-03-10|to-read
+9781647228170|Insight Editions|The Official Minecraft Coloring Adventures Book: Create, Explore, Color! : for Young Artists and Kids 5-10 (Gaming)|Insight Kids|Video & Electronic Games, Coloring Books, Popular Culture|2022|2019-11-08|to-read
+9781338635171|Suzanne Collins|The Ballad of Songbirds and Snakes(The Hunger Games)|Scholastic Press|Young Adult Fiction, Dystopian, Action & Adventure, Political Thriller Fiction, Science Fiction|2020|2020-12-01|to-read
+9781680524109|Parragon Books|The Art of Mixology: Classic Cocktails and Curious Concoctions|Parragon|Cooking, Entertaining, Beverages, Wine & Spirits|2018|2022-04-05|to-read
+9780062820174|Joanna Gaines|Magnolia Table, Volume 3: A Collection of Recipes for Gathering|William Morrow Cookbooks|Regional & Ethnic Cooking, Media Tie-In, Entertaining, TV / Celebrity Chef Cookbooks, National & Regional Cuisine, Cooking for Parties|2023|2023-01-15|to-read
+9780143127741|Bessel Van Der Kolk|The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma|Penguin Books|Psychology, Psychopathology, Post-Traumatic Stress Disorder (PTSD), Mental Health, Psychiatry, Therapy, Treatment, Stress Disorders, Post-Traumatic|2015|2019-07-22|to-read
+9780307742483|David Grann|Killers of the Flower Moon: The Osage Murders and the Birth of the FBI|Vintage|True Crime, Murder, United States 20th Century History, Native American History|2018|2020-10-12|to-read
+9781501110368|Colleen Hoover|It Ends with Us: A Novel|Atria Books|Contemporary Romance, New Adult Romance Fiction, Contemporary Women’s Fiction|2016|2021-06-28|to-read
+9781668640449|Liz Cheney|Oath and Honor: A Memoir and a Warning|Little Brown and Company|History, Modern, 21st Century, Biography & Autobiography, Political, Personal Memoirs|2023|2022-11-30|to-read
+9781549164071|Nathan Harris|The Sweetness of Water|Hachette Book Group|Fiction, Southern, Historical, Civil War Era, Gay|2021|2018-09-14|to-read
+9780593207093|James Clear|Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones|Penguin Audiobooks|Personal Growth, Social Psychology, Business & Economics > Organizational Behavior|2019|2019-02-18|to-read
+9781797159508|Britney Spears|The Woman in Me|Simon & Schuster Audio|Biography & Autobiography > Rich & Famous, Entertainment & Performing Arts, Composers & Musicians|2023|2023-09-10|to-read
+9780451532244|Mary Shelley|Frankenstein|Signet Book|Fiction > Science Fiction > Adventure, Horror, Classic Fiction|2013|2018-12-05|to-read
+9780915689002|George J. Pratt, Dennis P. Wood, Brian M. Alman|A Clinical Hypnosis Primer|Psychology & Consulting Assoc Press, La Jolla, CA|Clinical Hypnosis|1984|2019-04-30|to-read
+9780930626075|Charles T. Tart|On Being Stoned: A Psychological Study of Marijuana Intoxication|Science and Behavior Books, 1971|Psychological Study|1971|2018-06-17|to-read
+9781571744845|Irene D.O. Hickman|Mind Probe-Hypnosis|Hickman Systems|Hypnosis|1985|2019-08-22|to-read
+9780385534260|Adrian Finkelstein|Marilyn Monroe Returns: The Healing of a Soul|Hampton Roads|Biographies & Memoirs|2006|2020-11-15|to-read
+9780399590504|David Grann|The Wager: A Tale of Shipwreck, Mutiny, and Murder|Doubleday|Nonfiction|2023|2023-12-01|to-read
