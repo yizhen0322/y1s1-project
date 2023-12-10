@@ -156,6 +156,10 @@ def validate_year(year):
 
         current_year = datetime.datetime.now().year
         return 0 <= int(year) <= current_year
+            return true
+        else:
+            print(f"Invalid input. Year must be a 4-digit integer not exceeding the current year ({current_year}).")
+            return False
     except ValueError:
         print("Invalid input. Year must be a 4-digit integer.")
         return False
@@ -226,7 +230,7 @@ while True:
         year_published = input("Enter year published(leave blank if can't find): ")
         while not validate_year(year_published):
             print("Invalid input. Year must be a 4-digit integer.")
-        year_published = input("Enter year published(leave blank if can't find): ")
+            year_published = input("Enter year published(leave blank if can't find): ")
         date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
         while not validate_purchased_date(date_purchased, year_published):
             date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
@@ -381,7 +385,6 @@ while True:
                 genre = input("Enter new genre (leave blank to keep current): ").title()
                 year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
-                    print("Invalid input. Year must be a 4-digit integer.")
                     year_published = input("Enter year published: ")
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased, year_published):
@@ -401,7 +404,6 @@ while True:
                 genre = input("Enter new genre (leave blank to keep current): ").title()
                 year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
-                    print("Invalid input. ISBN must consist of 13 positive integer number.")
                     year_published = input("Enter year published: ")
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased, year_published):
@@ -421,7 +423,6 @@ while True:
                 genre = input("Enter new genre (leave blank to keep current): ").title()
                 year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
-                    print("Invalid input. Year must be a 4-digit integer.")
                     year_published = input("Enter year published: ")
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased, year_published):
