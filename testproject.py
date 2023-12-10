@@ -150,7 +150,15 @@ def validate_ISBN(ISBN):
         return ISBN == "" or (ISBN.isdigit() and int(ISBN) >= 0 and len(ISBN) == 13 )
 
 def validate_year(year):
-    return year == "" or (year.isdigit() and len(year) == 4)
+    try:
+        if year == "":
+            return True  # Allow blank input
+
+        current_year = datetime.datetime.now().year
+        return 0 <= int(year) <= current_year
+    except ValueError:
+        print("Invalid input. Year must be a 4-digit integer.")
+        return False
 
 def validate_purchased_date(date_purchased, year_published):
     try:
