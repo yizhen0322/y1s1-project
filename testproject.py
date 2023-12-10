@@ -162,7 +162,11 @@ def validate_purchased_date(date_purchased, year_published):
             if purchased_date.year < int(year_published):
                 print("Invalid input. Purchase date must be after the published year.")
                 return False
-
+        # Check if the purchase date is not after the current date
+        current_date = datetime.datetime.now()
+        if purchased_date > current_date:
+            print("Invalid input. Purchase date cannot be in the future.")
+            return False
         return True
     except ValueError:
         print("Invalid input. Please enter a valid date in the format YYYY-MM-DD.")
@@ -217,7 +221,6 @@ while True:
         year_published = input("Enter year published(leave blank if can't find): ")
         date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
         while not validate_purchased_date(date_purchased, year_published):
-            print("Invalid input. Purchase date must be after the published year.")
             date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
         status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
         while not validate_status(status):
@@ -374,7 +377,6 @@ while True:
                     year_published = input("Enter year published: ")
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased, year_published):
-                    print("Invalid input. Purchase date must be after the published year.")
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
                 while not validate_status(status):
@@ -395,7 +397,6 @@ while True:
                     year_published = input("Enter year published: ")
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased, year_published):
-                    print("Invalid input. Purchase date must be after the published year.")
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
                 while not validate_status(status):
@@ -416,7 +417,6 @@ while True:
                     year_published = input("Enter year published: ")
                 date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 while not validate_purchased_date(date_purchased, year_published):
-                    print("Invalid input. Purchase date must be after the published year.")
                     date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
                 status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
                 while not validate_status(status):
