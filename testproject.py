@@ -155,7 +155,7 @@ def validate_year(year):
             return True  # Allow blank input
 
         current_year = datetime.datetime.now().year
-        return 0 <= int(year) <= current_year
+        if 0 <= int(year) <= current_year:
             return True
         
         else:
