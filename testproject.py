@@ -229,7 +229,6 @@ while True:
         genre = input("Enter genre(leave blank if can't find): ").title()
         year_published = input("Enter year published(leave blank if can't find): ")
         while not validate_year(year_published):
-            print("Invalid input. Year must be a 4-digit integer.")
             year_published = input("Enter year published(leave blank if can't find): ")
         date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
         while not validate_purchased_date(date_purchased, year_published):
