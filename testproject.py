@@ -383,13 +383,13 @@ while True:
                     year_published = input("Enter new year published (leave blank to keep current): ")
                     while not validate_year(year_published):
                         year_published = input("Enter year published: ")
-                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
                     while not validate_purchased_date(date_purchased, year_published):
-                        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
+                    status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
                     while not validate_status(status):
                         print("Invalid input. Status must be 'read' or 'to-read'.")
-                        status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                        status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
 
                     # Update only the fields that are not left blank
                     for result in search_results:
@@ -507,13 +507,13 @@ while True:
                     year_published = input("Enter new year published (leave blank to keep current): ")
                     while not validate_year(year_published):
                         year_published = input("Enter year published: ")
-                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
                     while not validate_purchased_date(date_purchased, year_published):
-                        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
+                    status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
                     while not validate_status(status):
                         print("Invalid input. Status must be 'read' or 'to-read'.")
-                        status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                        status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
 
                     # Update only the fields that are not left blank
                     for result in search_results:
