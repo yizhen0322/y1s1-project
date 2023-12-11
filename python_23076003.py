@@ -491,13 +491,7 @@ while True:
                     for result in search_results:
                         print(result)
 
-                    # Prompt for updated information based on search criteria
-                    ISBN = input("Enter ISBN: ")
-                    while not validate_ISBN(ISBN):
-                        print("Invalid input. ISBN must be an integer.")
-                        ISBN = input("Enter ISBN: ")
-
-                    # If searching by title, don't allow changes to title
+                    # Prompt for updated information based on search criteria changes to title
                     author = input("Enter new author (leave blank to keep current): ").title()
                     publisher = input("Enter new publisher (leave blank to keep current): ").title()
                     genre = input("Enter new genre (leave blank to keep current): ").title()
@@ -514,8 +508,6 @@ while True:
 
                     # Update only the fields that are not left blank
                     for result in search_results:
-                        if ISBN:
-                            result.set_ISBN(ISBN)
                         if author:
                             result.set_author(author)
                         if publisher:
