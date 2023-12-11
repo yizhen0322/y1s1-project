@@ -169,14 +169,14 @@ def validate_purchased_date(date_purchased, year_published):
     try:
         if date_purchased == "":
             return True  # Allow blank input
-
+        # If year_published is not empty, check if the purchase date is after the published year
         purchased_date = datetime.datetime.strptime(date_purchased, "%Y-%m-%d")
 
         if year_published:
             if purchased_date.year < int(year_published):
                 print("Invalid input. Purchase date must be after the published year.")
                 return False
-
+        # Check if the purchase date is not after the current date
         current_date = datetime.datetime.now()
         if purchased_date > current_date:
             print("Invalid input. Purchase date cannot be in the future.")
