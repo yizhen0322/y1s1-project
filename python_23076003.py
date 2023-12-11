@@ -253,14 +253,12 @@ while True:
         # Option 2: Remove book
         search_results = []
         try:
-            search_choice = input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice (leave blank to cancel): ")
+            search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice (leave blank to cancel): "))
 
             if not search_choice:
                 print("Removal canceled.")
                 # Exit the option without further processing
                 continue
-
-            search_choice = int(search_choice)
 
             if search_choice == 1:
                 ISBN = input("Enter ISBN (leave blank to cancel): ")
