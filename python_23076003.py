@@ -289,6 +289,7 @@ while True:
                 search_results = book.search_books_by_title(title)
             else:
                 print("Invalid choice. Please enter a valid option.")
+                continue
 
         except ValueError:
             print("Invalid input. Please enter a valid integer.")
