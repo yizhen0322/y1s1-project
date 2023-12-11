@@ -363,9 +363,57 @@ while True:
             if search_choice == 1:
                 ISBN = input("Enter ISBN: ")
                 while not validate_ISBN(ISBN):
-                    print("Invalid input. ISBN must consist of 13 positive integer number.(leave blank for cancel)")
+                    print("Invalid input. ISBN must consist of 13 positive integer numbers. (leave blank for cancel)")
                     ISBN = input("Enter ISBN: ")
                 search_results = book.search_books_by_ISBN(ISBN)
+
+                if not search_results:
+                    print("\nNo matching books found.")
+                else:
+                    # Display the matching books with index
+                    print("\nMatching Books:")
+                    for result in search_results:
+                        print(result)
+
+                    # Prompt for updated information based on search criteria
+                    author = input("Enter new author (leave blank to keep current): ").title()
+                    title = input("Enter new title (leave blank to keep current): ").title()
+                    publisher = input("Enter new publisher (leave blank to keep current): ").title()
+                    genre = input("Enter new genre (leave blank to keep current): ").title()
+                    year_published = input("Enter new year published (leave blank to keep current): ")
+                    while not validate_year(year_published):
+                        year_published = input("Enter year published: ")
+                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                    while not validate_purchased_date(date_purchased, year_published):
+                        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                    while not validate_status(status):
+                        print("Invalid input. Status must be 'read' or 'to-read'.")
+                        status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+
+                    # Update only the fields that are not left blank
+                    for result in search_results:
+                        if author:
+                            result.set_author(author)
+                        if title:
+                            result.set_title(title)
+                        if publisher:
+                            result.set_publisher(publisher)
+                        if genre:
+                            result.set_genre(genre)
+                        if year_published:
+                            result.set_year_published(year_published)
+                        if date_purchased:
+                            result.set_date_purchased(date_purchased)
+                        if status:
+                            result.set_status(status)
+
+                    # Display the updated book information
+                    print("\nUpdated Book Information:")
+                    for result in search_results:
+                        print(result)
+
+                    print("Update successful.")
             elif search_choice == 2:
                 author = input("Enter author: ")
                 search_results = book.search_books_by_author(author)
@@ -393,38 +441,40 @@ while True:
                                     # Get the selected book
                                     selected_book = search_results[selected_index]
 
-                                    # Prompt for the new details
-                                    title = input(f"Enter the new title for '{selected_book.get_title()}': ").title()
-                                    publisher = input(f"Enter the new publisher for '{selected_book.get_publisher()}': ").title()
-                                    genre = input(f"Enter the new genre for '{selected_book.get_genre()}': ").title()
-                                    year_published = input(f"Enter the new year published for '{selected_book.get_year_published()}' (leave blank to keep current): ")
-                                    while not validate_year(year_published):
-                                        year_published = input("Enter year published: ")
-                                    date_purchased = input(f"Enter the new date purchased for '{selected_book.get_date_purchased()}' (YYYY-MM-DD) (leave blank to keep current): ")
-                                    while not validate_purchased_date(date_purchased, year_published):
-                                        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
-                                    status = input(f"Enter the new status for '{selected_book.get_status()}' (read/to-read) (leave blank to keep current): ").lower()
-                                    while not validate_status(status):
+                                    # Create a new instance of the Book class and copy the attributes
+                                    updated_title = input(f"Enter the new title for '{selected_book.get_title()}' (leave blank to keep current): ").title() or selected_book.get_title()
+                                    updated_author = input(f"Enter the new author for '{selected_book.get_author()}' (leave blank to keep current): ").title() or selected_book.get_author()
+                                    updated_publisher = input(f"Enter the new publisher for '{selected_book.get_publisher()}' (leave blank to keep current): ").title() or selected_book.get_publisher()
+                                    updated_genre = input(f"Enter the new genre for '{selected_book.get_genre()}' (leave blank to keep current): ").title() or selected_book.get_genre()
+                                    updated_year_published = input(f"Enter the new year published for '{selected_book.get_year_published()}' (leave blank to keep current): ") or selected_book.get_year_published()
+                                    while not validate_year(updated_year_published):
+                                        updated_year_published = input("Enter year published: ")
+                                    updated_date_purchased = input(f"Enter the new date purchased for '{selected_book.get_date_purchased()}' (YYYY-MM-DD) (leave blank to keep current): ") or selected_book.get_date_purchased()
+                                    while not validate_purchased_date(updated_date_purchased, updated_year_published):
+                                        updated_date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
+                                    updated_status = input(f"Enter the new status for '{selected_book.get_status()}' (read/to-read) (leave blank to keep current): ").lower() or selected_book.get_status()
+                                    while not validate_status(updated_status):
                                         print("Invalid input. Status must be 'read' or 'to-read'.")
-                                        status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
+                                        updated_status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
 
-                                    # Update the details if input is not blank
-                                    if title:
-                                        selected_book.set_title(title)
-                                    if publisher:
-                                        selected_book.set_publisher(publisher)
-                                    if genre:
-                                        selected_book.set_genre(genre)
-                                    if year_published:
-                                        selected_book.set_year_published(year_published)
-                                    if date_purchased:
-                                        selected_book.set_date_purchased(date_purchased)
-                                    if status:
-                                        selected_book.set_status(status)
+                                    # Create a new book object with updated attributes
+                                    updated_book = Book(
+                                        selected_book.get_ISBN(),
+                                        updated_author,
+                                        updated_title,
+                                        updated_publisher,
+                                        updated_genre,
+                                        updated_year_published,
+                                        updated_date_purchased,
+                                        updated_status
+                                    )
+
+                                    # Replace the selected book with the updated book in the book list
+                                    Book.bookList[Book.bookList.index(selected_book)] = updated_book
 
                                     # Display the updated book information
                                     print("\nUpdated Book Information:")
-                                    print(selected_book)
+                                    print(updated_book)
 
                                     print("Update successful.")
                                     break
@@ -435,6 +485,59 @@ while True:
             elif search_choice == 3:
                 title = input("Enter title: ")
                 search_results = book.search_books_by_title(title)
+
+                if not search_results:
+                    print("\nNo matching books found.")
+                else:
+                    # Display the matching books with index
+                    print("\nMatching Books:")
+                    for result in search_results:
+                        print(result)
+
+                    # Prompt for updated information based on search criteria
+                    ISBN = input("Enter ISBN: ")
+                    while not validate_ISBN(ISBN):
+                        print("Invalid input. ISBN must be an integer.")
+                        ISBN = input("Enter ISBN: ")
+
+                    # If searching by title, don't allow changes to title
+                    author = input("Enter new author (leave blank to keep current): ").title()
+                    publisher = input("Enter new publisher (leave blank to keep current): ").title()
+                    genre = input("Enter new genre (leave blank to keep current): ").title()
+                    year_published = input("Enter new year published (leave blank to keep current): ")
+                    while not validate_year(year_published):
+                        year_published = input("Enter year published: ")
+                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                    while not validate_purchased_date(date_purchased, year_published):
+                        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                    while not validate_status(status):
+                        print("Invalid input. Status must be 'read' or 'to-read'.")
+                        status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+
+                    # Update only the fields that are not left blank
+                    for result in search_results:
+                        if ISBN:
+                            result.set_ISBN(ISBN)
+                        if author:
+                            result.set_author(author)
+                        if publisher:
+                            result.set_publisher(publisher)
+                        if genre:
+                            result.set_genre(genre)
+                        if year_published:
+                            result.set_year_published(year_published)
+                        if date_purchased:
+                            result.set_date_purchased(date_purchased)
+                        if status:
+                            result.set_status(status)
+
+                    # Display the updated book information
+                    print("\nUpdated Book Information:")
+                    for result in search_results:
+                        print(result)
+
+                    print("Update successful.")
             else:
                 print("Invalid choice. Please enter a valid option.")
                 continue  # This will go back to the beginning of the loop
@@ -443,73 +546,6 @@ while True:
             print("Invalid input. Please enter a valid integer.")
         # You may choose to handle this differently, like asking the user to input the choice again.
 
-        if not search_results:
-            print("\nNo matching books found.")
-        else:
-            print("\nMatching Books:")
-            for result in search_results:
-                print(result)
-
-            # Prompt for updated information based on search criteria
-            if search_choice == 1:
-                # If searching by ISBN, don't allow changes to ISBN
-                author = input("Enter new author (leave blank to keep current): ").title()
-                title = input("Enter new title (leave blank to keep current): ").title()
-                publisher = input("Enter new publisher (leave blank to keep current): ").title()
-                genre = input("Enter new genre (leave blank to keep current): ").title()
-                year_published = input("Enter new year published (leave blank to keep current): ")
-                while not (validate_year(year_published)):
-                    year_published = input("Enter year published: ")
-                date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
-                while not validate_purchased_date(date_purchased, year_published):
-                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
-                status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
-                while not validate_status(status):
-                    print("Invalid input. Status must be 'read' or 'to-read'.")
-                    status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
-            elif search_choice == 3:
-                # If searching by title, don't allow changes to title
-                ISBN = input("Enter ISBN: ")
-                while not validate_ISBN(ISBN):
-                    print("Invalid input. ISBN must be an integer.")
-                    ISBN = input("Enter ISBN: ")                    
-                author = input("Enter new author (leave blank to keep current): ").title()
-                publisher = input("Enter new publisher (leave blank to keep current): ").title()
-                genre = input("Enter new genre (leave blank to keep current): ").title()
-                year_published = input("Enter new year published (leave blank to keep current): ")
-                while not (validate_year(year_published)):
-                    year_published = input("Enter year published: ")
-                date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                while not validate_purchased_date(date_purchased, year_published):
-                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
-                while not validate_status(status):
-                    print("Invalid input. Status must be 'read' or 'to-read'.")
-                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
-
-            # Update only the fields that are not left blank
-            for result in search_results:
-                if author:
-                    result.set_author(author)
-                if title:
-                    result.set_title(title)
-                if publisher:
-                    result.set_publisher(publisher)
-                if genre:
-                    result.set_genre(genre)
-                if year_published:
-                    result.set_year_published(year_published)
-                if date_purchased:
-                    result.set_date_purchased(date_purchased)
-                if status:
-                    result.set_status(status)
-
-            # Display the updated book information
-            print("\nUpdated Book Information:")
-            for result in search_results:
-                print(result)
-
-            print("Update successful.")
 
     elif choice == 4:
         # Option 4: Display all books
