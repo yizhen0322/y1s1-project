@@ -228,6 +228,10 @@ while True:
             print("Add canceled. Returning to the main menu.")
             continue  # Skip the rest of the loop and go back to the main menu    
         # Get other book details from user
+        ISBN = input("Enter ISBN: ")
+        while not validate_ISBN(ISBN):
+            print("Invalid input. ISBN must be an integer.")
+            ISBN = input("Enter ISBN: ")
         author = input("Enter author(leave blank if can't find): ").title()
         title = input("Enter title(leave blank if can't find): ").title()
         publisher = input("Enter publisher(leave blank if can't find): ").title()
