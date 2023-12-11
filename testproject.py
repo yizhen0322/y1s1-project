@@ -295,8 +295,6 @@ while True:
         except ValueError:
             print("Invalid input. Please enter a valid integer.")
 
-
-                 # Display the matching books with index
             # Display the matching books with index
         if search_results:
             print("\nMatching Books:")
