@@ -295,64 +295,71 @@ while True:
         except ValueError:
             print("Invalid input. Please enter a valid integer.")
 
-        # Display the matching books with index
-        print("\nMatching Books:")
-        for idx, result in enumerate(search_results):
-            print(f"{idx + 1}. {result}")
 
-        # Prompt for user input to select book(s) for removal
-        while True:
-            try:
-                user_input = input("Enter the index of the book to remove (or 'all' to remove all matching books), or 'cancel' to cancel: ").lower()
+                 # Display the matching books with index
+            # Display the matching books with index
+        if search_results:
+            print("\nMatching Books:")
+            for idx, result in enumerate(search_results):
+                print(f"{idx + 1}. {result}")
 
-                if user_input == 'cancel':
-                    print("Removal canceled.")
-                    break
-                elif user_input == 'all':
-                    # Remove all matching books
-                    for result in search_results:
-                        Book.bookList.remove(result)
-                    print("Delete successful.")
-                    break
-                else:
-                    # Try to convert the input to an integer
-                    selected_index = int(user_input) - 1
-                    if 0 <= selected_index < len(search_results):
-                        # Remove the selected book
-                        selected_book = search_results[selected_index]
+            # Prompt for user input to select book(s) for removal
+            while True:
+                try:
+                    user_input = input("Enter the index of the book to remove (or 'all' to remove all matching books), or 'cancel' to cancel: ").lower()
 
-                       # Display the selected book for confirmation
-                        print(f"\nSelected Book for Removal:\n{selected_book}")
+                    if user_input == 'cancel':
+                        print("Removal canceled.")
+                        # Exit the option without further processing
+                        break
+                    elif user_input == 'all':
+                        # Remove all matching books
+                        for result in search_results:
+                            Book.bookList.remove(result)
+                        print("Delete successful.")
+                        break
+                    else:
+                        # Try to convert the input to an integer
+                        selected_index = int(user_input) - 1
+                        if 0 <= selected_index < len(search_results):
+                            # Remove the selected book
+                            selected_book = search_results[selected_index]
 
-                        # Prompt for confirmation to delete the selected book
-                        while True:
-                            delete_confirmation = input("Do you want to delete the selected book? (yes/no): ").lower()
-                            if delete_confirmation in ["yes", "no"]:
+                            # Display the selected book for confirmation
+                            print(f"\nSelected Book for Removal:\n{selected_book}")
+
+                            # Prompt for confirmation to delete the selected book
+                            while True:
+                                delete_confirmation = input("Do you want to delete the selected book? (yes/no): ").lower()
+                                if delete_confirmation in ["yes", "no"]:
+                                    break
+                                else:
+                                    print("Invalid input. Please enter 'yes' or 'no'.")
+
+                            if delete_confirmation == "yes":
+                                # Remove the selected book
+                                Book.bookList.remove(selected_book)
+                                print("Delete successful.")
                                 break
                             else:
-                                print("Invalid input. Please enter 'yes' or 'no'.")
-
-                        if delete_confirmation == "yes":
-                            # Remove the selected book
-                            Book.bookList.remove(selected_book)
-                            print("Delete successful.")
-                            break
+                                print("Delete canceled.")
+                                break
                         else:
-                            print("Delete canceled.")
-                            break
-                    else:
-                        print("Invalid index. Please enter a valid index or 'cancel'.")
-            except ValueError:
-                print("Invalid input. Please enter a valid index or 'cancel'.")
+                            print("Invalid index. Please enter a valid index or 'cancel'.")
+                except ValueError:
+                    print("Invalid input. Please enter a valid index or 'cancel'.")
+        else:
+            print("No matching books found.")
 
                   
 
     elif choice == 3:
         # Option 3: Update book
-        search_results = []      
+        search_results = []    
+
         try:
             search_choice = int(input("Search by:\n1. ISBN\n2. Author\n3. Title\nEnter your choice: "))
-        
+    
             if search_choice == 1:
                 ISBN = input("Enter ISBN: ")
                 while not validate_ISBN(ISBN):
@@ -362,6 +369,69 @@ while True:
             elif search_choice == 2:
                 author = input("Enter author: ")
                 search_results = book.search_books_by_author(author)
+        
+                if not search_results:
+                    print("\nNo matching books found.")
+                else:
+                    # Display the matching books with index
+                    print("\nMatching Books:")
+                    for idx, result in enumerate(search_results):
+                        print(f"{idx + 1}. {result}")
+
+                    # Prompt for user input to select a book for an update
+                    while True:
+                        try:
+                            user_input = input("Enter the index of the book to update (or 'cancel' to cancel): ").lower()
+
+                            if user_input == 'cancel':
+                                print("Update canceled.")
+                                break
+                            else:
+                                # Try to convert the input to an integer
+                                selected_index = int(user_input) - 1
+                                if 0 <= selected_index < len(search_results):
+                                    # Get the selected book
+                                    selected_book = search_results[selected_index]
+
+                                    # Prompt for the new details
+                                    title = input(f"Enter the new title for '{selected_book.get_title()}': ").title()
+                                    publisher = input(f"Enter the new publisher for '{selected_book.get_publisher()}': ").title()
+                                    genre = input(f"Enter the new genre for '{selected_book.get_genre()}': ").title()
+                                    year_published = input(f"Enter the new year published for '{selected_book.get_year_published()}' (leave blank to keep current): ")
+                                    while not validate_year(year_published):
+                                        year_published = input("Enter year published: ")
+                                    date_purchased = input(f"Enter the new date purchased for '{selected_book.get_date_purchased()}' (YYYY-MM-DD) (leave blank to keep current): ")
+                                    while not validate_purchased_date(date_purchased, year_published):
+                                        date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
+                                    status = input(f"Enter the new status for '{selected_book.get_status()}' (read/to-read) (leave blank to keep current): ").lower()
+                                    while not validate_status(status):
+                                        print("Invalid input. Status must be 'read' or 'to-read'.")
+                                        status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
+
+                                    # Update the details if input is not blank
+                                    if title:
+                                        selected_book.set_title(title)
+                                    if publisher:
+                                        selected_book.set_publisher(publisher)
+                                    if genre:
+                                        selected_book.set_genre(genre)
+                                    if year_published:
+                                        selected_book.set_year_published(year_published)
+                                    if date_purchased:
+                                        selected_book.set_date_purchased(date_purchased)
+                                    if status:
+                                        selected_book.set_status(status)
+
+                                    # Display the updated book information
+                                    print("\nUpdated Book Information:")
+                                    print(selected_book)
+
+                                    print("Update successful.")
+                                    break
+                                else:
+                                    print("Invalid index. Please enter a valid index or 'cancel'.")
+                        except ValueError:
+                            print("Invalid input. Please enter a valid index or 'cancel'.")
             elif search_choice == 3:
                 title = input("Enter title: ")
                 search_results = book.search_books_by_title(title)
@@ -390,32 +460,13 @@ while True:
                 year_published = input("Enter new year published (leave blank to keep current): ")
                 while not (validate_year(year_published)):
                     year_published = input("Enter year published: ")
-                date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
+                date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
                 while not validate_purchased_date(date_purchased, year_published):
-                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank to keep current): ")
+                status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
                 while not validate_status(status):
                     print("Invalid input. Status must be 'read' or 'to-read'.")
-                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
-            elif search_choice == 2:
-                # If searching by author, don't allow changes to author
-                ISBN = input("Enter ISBN: ")
-                while not validate_ISBN(ISBN):
-                    print("Invalid input. ISBN must consist of 13 positive integer number.")
-                    ISBN = input("Enter ISBN: ")
-                title = input("Enter new title (leave blank to keep current): ").title()
-                publisher = input("Enter new publisher (leave blank to keep current): ").title()
-                genre = input("Enter new genre (leave blank to keep current): ").title()
-                year_published = input("Enter new year published (leave blank to keep current): ")
-                while not (validate_year(year_published)):
-                    year_published = input("Enter year published: ")
-                date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                while not validate_purchased_date(date_purchased, year_published):
-                    date_purchased = input("Enter date purchased (YYYY-MM-DD)(leave blank if can't find): ")
-                status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
-                while not validate_status(status):
-                    print("Invalid input. Status must be 'read' or 'to-read'.")
-                    status = input("Enter status (read/to-read) (leave blank if can't find): ").lower()
+                    status = input("Enter status (read/to-read) (leave blank to keep current): ").lower()
             elif search_choice == 3:
                 # If searching by title, don't allow changes to title
                 ISBN = input("Enter ISBN: ")
